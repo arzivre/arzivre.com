@@ -71,27 +71,27 @@ const Blog = () => {
         my={20}
         className={classes.search}
       />
-      <Title order={2} mb={20}>
-        Popular Post
+      <Title order={2} mt={20} mb={10}>
+        All Post
       </Title>
-      <Card mb={5} p='xs'>
+      <div>
         <Text weight={500}>text</Text>
         <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
           text
         </Text>
-      </Card>
-      <Card mb={5} p='xs'>
+      </div>
+      <div>
         <Text weight={500}>text</Text>
         <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
           text
         </Text>
-      </Card>
-      <Card mb={5} p='xs'>
+      </div>
+      <div>
         <Text weight={500}>text</Text>
         <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
           text
         </Text>
-      </Card>
+      </div>
     </Container>
   )
 }
