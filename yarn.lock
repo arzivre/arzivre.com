@@ -65,6 +65,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@emailjs/browser@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.5.0.tgz#2492baa62df0edef1012cbb26f90a7d23b9d54b0"
+  integrity sha512-VDpyaF2Xkt21/gRaV5TgZ8+CSsMy3+UTJo7K3/NL63gfBQIzrVQiK1U7Jw4PqpFDps9a1Gj7q8gfJ7thxUIRcw==
+
 "@emotion/babel-plugin@^11.7.1":
   version "11.7.2"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.7.2.tgz#fec75f38a6ab5b304b0601c74e2a5e77c95e5fa0"
@@ -2198,6 +2203,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+tabler-icons-react@^1.44.0:
+  version "1.44.0"
+  resolved "https://registry.yarnpkg.com/tabler-icons-react/-/tabler-icons-react-1.44.0.tgz#6536f524e03c765b78078e7f65d3539b946253b6"
+  integrity sha512-AYQQGl55yVe1KHZl+zyDAAwDOcPknKZNC7vgwmjyvpmz4P5Gjb7DtpsOPa1nB0qMYW5Orsrt+1e4qnRoCKgo6A==
 
 text-table@^0.2.0:
   version "0.2.0"

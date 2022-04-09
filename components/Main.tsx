@@ -17,7 +17,7 @@ const Main: React.FC = ({ children }) => {
         links={[
           { link: '/blog', label: 'Blog' },
           { link: '/project', label: 'Project' },
-          { link: '/about', label: 'about' },
+          { link: '/contact', label: 'Contact' },
         ]}
       />
       <Container size={'xl'}>{children}</Container>
