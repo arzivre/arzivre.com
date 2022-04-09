@@ -98,8 +98,7 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
       <Button
         component='a'
         className={classes.link}
-        onClick={(event: { preventDefault: () => void }) => {
-          event.preventDefault()
+        onClick={() => {
           setActive(link.link)
           toggleOpened(false)
         }}
@@ -112,7 +111,14 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
   return (
     <Header height={HEADER_HEIGHT} className={classes.header} mb={120}>
       <Container size={'xl'} className={classes.inner}>
-        <h1>Arzivre</h1>
+        <NextLink href={'/'} as={'/home'} passHref>
+          <Button
+            component='a'
+            style={{ background: 'none', color: '#101113' }}
+          >
+            <h1>Arzivre</h1>
+          </Button>
+        </NextLink>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>

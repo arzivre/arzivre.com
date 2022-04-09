@@ -8,7 +8,6 @@ import {
   Button,
   SimpleGrid,
 } from '@mantine/core'
-import image from './image.svg'
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -46,17 +45,17 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export function NotFound() {
+export default function NotFound() {
   const { classes } = useStyles()
 
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} mb={20}>
       <SimpleGrid
         spacing={80}
         cols={2}
         breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 40 }]}
       >
-        <Image src={image} className={classes.mobileImage} />
+        <Image src='/images/404.svg' className={classes.mobileImage} />
         <div>
           <Title className={classes.title}>Something is not right...</Title>
           <Text color='dimmed' size='lg'>
@@ -73,7 +72,7 @@ export function NotFound() {
             Get back to home page
           </Button>
         </div>
-        <Image src={image.src} className={classes.desktopImage} />
+        <Image src='/images/404.svg' className={classes.desktopImage} />
       </SimpleGrid>
     </Container>
   )
