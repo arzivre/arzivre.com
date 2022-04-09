@@ -1,5 +1,11 @@
 import { Container, createStyles, ActionIcon, Group, Text } from '@mantine/core'
-import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react'
+import {
+  BrandTwitter,
+  BrandYoutube,
+  BrandInstagram,
+  Location,
+  Mail,
+} from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -32,21 +38,16 @@ export const FooterArzivre = () => {
         arzivreart@gmail.com
       </Text>
 
-      <Group direction='column' spacing={0}>
-        <Group spacing={0} className={classes.links} position='right' noWrap>
-          <ActionIcon size='lg'>
-            <BrandTwitter size={18} />
-          </ActionIcon>
-          <ActionIcon size='lg'>
-            <BrandYoutube size={18} />
-          </ActionIcon>
-          <ActionIcon size='lg'>
-            <BrandInstagram size={18} />
-          </ActionIcon>
-        </Group>
-        <Text size='xl' weight={500}>
-          Web Developer
-        </Text>
+      <Group spacing={0} className={classes.links} position='right' noWrap>
+        <ActionIcon size='lg'>
+          <BrandTwitter size={18} />
+        </ActionIcon>
+        <ActionIcon size='lg'>
+          <BrandYoutube size={18} />
+        </ActionIcon>
+        <ActionIcon size='lg'>
+          <BrandInstagram size={18} />
+        </ActionIcon>
       </Group>
     </Container>
   )

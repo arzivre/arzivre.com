@@ -109,7 +109,7 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
   ))
 
   return (
-    <Header height={HEADER_HEIGHT} className={classes.header} mb={120}>
+    <Header height={HEADER_HEIGHT} className={classes.header} mb={20}>
       <Container size={'xl'} className={classes.inner}>
         <NextLink href={'/'} as={'/home'} passHref>
           <Button

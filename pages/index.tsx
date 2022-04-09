@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { Center, Container, Divider, Grid, Text } from '@mantine/core'
+import { Center, Container, Divider, Grid, Text, Title } from '@mantine/core'
 
 const Home: NextPage = () => {
   return (
@@ -17,13 +17,13 @@ export default Home
 const Hero = () => {
   return (
     <>
-      <Center>
-        <Text>Web Developer</Text>
+      <Center mt={100}>
+        <Title order={1}>Web Developer</Title>
       </Center>
-      <Container size={'md'} sx={{ height: 500 }}>
+      <Container size={'md'} style={{ marginBottom: '400px' }}>
         <Text>Hey, ...</Text>
 
-        <Text>
+        <Text weight={200} size='xl'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eius
           natus quos fugit sint, nulla, repudiandae accusamus reiciendis quia
           dolorum ullam earum aliquam tempora minus assumenda placeat dolor modi
@@ -41,9 +41,9 @@ const Project = () => {
         color={'dark'}
         size='xl'
         label={
-          <Text weight={500} style={{ fontSize: 40, color: '#101113' }}>
+          <Title order={2} style={{ fontSize: 40, color: '#101113' }}>
             Projects
-          </Text>
+          </Title>
         }
         labelPosition='center'
         labelProps={{
@@ -52,7 +52,7 @@ const Project = () => {
       />
       <Grid columns={12}>
         <Grid.Col xs={12} sm={12} md={4}>
-          <Text weight={500} style={{ fontSize: 30 }}>
+          <Text weight={500} size='xl'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas a
           </Text>
         </Grid.Col>
@@ -68,13 +68,15 @@ const Project = () => {
           </Text>
         </Grid.Col>
       </Grid>
-      <Grid columns={12}>
+      <Grid columns={12} grow>
         <Grid.Col span={8} sm={12} md={8}>
           <Image
             src='/images/Capture.JPG'
             alt='project image'
-            height={427}
-            width={900}
+            width='100%'
+            height='50%'
+            layout='responsive'
+            objectFit='contain'
           />
         </Grid.Col>
 
@@ -89,7 +91,7 @@ const Project = () => {
 
 const Contact = () => {
   return (
-    <>
+    <div style={{ marginTop: '100px' }}>
       <Text weight={500} style={{ fontSize: 30 }}>
         Lets Build Something Together
       </Text>
@@ -97,6 +99,6 @@ const Contact = () => {
         feel free to reach out if you,re looking for a developer, have a
         question, or just want to connect.
       </Text>
-    </>
+    </div>
   )
 }

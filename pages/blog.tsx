@@ -1,8 +1,16 @@
-import { createStyles, Text, Title } from '@mantine/core'
+import {
+  Card,
+  Container,
+  createStyles,
+  Input,
+  Text,
+  Title,
+} from '@mantine/core'
+import { Search } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
   title: {
-    color: theme.white,
+    color: theme.colors.gray[9],
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
     lineHeight: 1.05,
@@ -26,6 +34,12 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  search: {
+    [theme.fn.smallerThan('xs')]: {
+      display: 'none',
+    },
+  },
+
   control: {
     paddingLeft: 50,
     paddingRight: 50,
@@ -41,18 +55,9 @@ const useStyles = createStyles((theme) => ({
 const Blog = () => {
   const { classes } = useStyles()
   return (
-    <>
-      <Title className={classes.title}>
-        My{' '}
-        <Text
-          component='span'
-          inherit
-          variant='gradient'
-          gradient={{ from: 'pink', to: 'yellow' }}
-        >
-          Blog
-        </Text>{' '}
-        Post
+    <Container size={'md'}>
+      <Title className={classes.title} mb={20}>
+        My Blog Post
       </Title>
       <div className='lorem'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
@@ -60,7 +65,34 @@ const Blog = () => {
         molestiae eligendi esse adipisci exercitationem, provident ad sequi aut
         inventore sint! Ad.
       </div>
-    </>
+      <Input
+        icon={<Search size={16} />}
+        placeholder='Search'
+        my={20}
+        className={classes.search}
+      />
+      <Title order={2} mb={20}>
+        Popular Post
+      </Title>
+      <Card mb={5} p='xs'>
+        <Text weight={500}>text</Text>
+        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
+          text
+        </Text>
+      </Card>
+      <Card mb={5} p='xs'>
+        <Text weight={500}>text</Text>
+        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
+          text
+        </Text>
+      </Card>
+      <Card mb={5} p='xs'>
+        <Text weight={500}>text</Text>
+        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
+          text
+        </Text>
+      </Card>
+    </Container>
   )
 }
 export default Blog
