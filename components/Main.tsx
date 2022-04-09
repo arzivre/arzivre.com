@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Container } from '@mantine/core'
 import { HeaderArzivre } from './Header'
+import FooterArzivre from './Footer'
 
 const Main: React.FC = ({ children }) => {
   return (
@@ -20,6 +21,7 @@ const Main: React.FC = ({ children }) => {
         ]}
       />
       <Container size={'xl'}>{children}</Container>
+      <FooterArzivre />
     </>
   )
 }

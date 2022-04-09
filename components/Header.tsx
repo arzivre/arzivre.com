@@ -16,16 +16,17 @@ const HEADER_HEIGHT = 60
 
 const useStyles = createStyles((theme) => ({
   header: {
+    background: 'transparent',
+    border: 'none',
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
-    border: 'none',
   },
 
   inner: {
-    height: 56,
+    height: HEADER_HEIGHT,
+    alignItems: 'center',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
 
   links: {
@@ -35,7 +36,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   link: {
-    backgroundColor: 'transparent',
+    background: 'transparent',
     display: 'block',
     lineHeight: 1,
     padding: '8px 12px',
@@ -43,16 +44,20 @@ const useStyles = createStyles((theme) => ({
     textDecoration: 'none',
     color:
       theme.colorScheme === 'dark'
-        ? theme.colors.dark[0]
-        : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
+        ? theme.colors.gray[0]
+        : theme.colors.gray[9],
+    fontSize: theme.fontSizes.md,
     fontWeight: 500,
 
     '&:hover': {
       backgroundColor:
         theme.colorScheme === 'dark'
-          ? theme.colors.dark[6]
-          : theme.colors.gray[2],
+          ? theme.colors.dark[0]
+          : theme.colors.gray[9],
+      color:
+        theme.colorScheme === 'dark'
+          ? theme.colors.gray[9]
+          : theme.colors.gray[0],
     },
   },
 

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { Center, Container, Grid, Text } from '@mantine/core'
+import { Center, Container, Divider, Grid, Text } from '@mantine/core'
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +21,8 @@ const Hero = () => {
         <Text>Web Developer</Text>
       </Center>
       <Container size={'md'} sx={{ height: 500 }}>
+        <Text>Hey, ...</Text>
+
         <Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eius
           natus quos fugit sint, nulla, repudiandae accusamus reiciendis quia
@@ -35,9 +37,19 @@ const Hero = () => {
 const Project = () => {
   return (
     <>
-      <Text weight={500} style={{ fontSize: 40 }}>
-        Projects
-      </Text>
+      <Divider
+        color={'dark'}
+        size='xl'
+        label={
+          <Text weight={500} style={{ fontSize: 40, color: '#101113' }}>
+            Projects
+          </Text>
+        }
+        labelPosition='center'
+        labelProps={{
+          component: 'h2',
+        }}
+      />
       <Grid columns={12}>
         <Grid.Col xs={12} sm={12} md={4}>
           <Text weight={500} style={{ fontSize: 30 }}>
