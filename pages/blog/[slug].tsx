@@ -36,7 +36,7 @@ const Post = ({ post }: any) => {
         <title>{post.title} - Arzivre</title>
       </Head>
       <main>
-        <p>{post.publishedAt}</p>
+        <p>{post.date.slice(0, 10)}</p>
 
         <MDXRemote {...post.body} components={MDXComponents} />
       </main>
