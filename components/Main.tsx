@@ -3,7 +3,10 @@ import { Container } from '@mantine/core'
 import { HeaderArzivre } from './Header'
 import FooterArzivre from './Footer'
 
-const Main: React.FC = ({ children }) => {
+interface MainProps {
+  children: React.ReactNode
+}
+const Main = ({ children }: MainProps) => {
   return (
     <>
       <Head>

@@ -2,15 +2,27 @@
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             
                         <url>
-                            <loc>https://arzivre.vercel.app/contact</loc>
+                            <loc>https://www.arzivre.com/contact</loc>
                         </url>
                     
                         <url>
-                            <loc>https://arzivre.vercel.app</loc>
+                            <loc>https://www.arzivre.com</loc>
                         </url>
                     
                         <url>
-                            <loc>https://arzivre.vercel.app/posts/web-developer-workflow</loc>
+                            <loc>https://www.arzivre.com/blog</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://www.arzivre.com/project</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://www.arzivre.com/posts/tes</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://www.arzivre.com/posts/web-developer-workflow</loc>
                         </url>
                     
         </urlset>

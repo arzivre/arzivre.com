@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs'
 import { globby } from 'globby'
-const homeURL = 'https://arzivre.vercel.app'
+const homeURL = 'https://www.arzivre.com'
 
 ;(async () => {
   try {
@@ -8,9 +8,11 @@ const homeURL = 'https://arzivre.vercel.app'
 
     const pages = await globby([
       'pages/*.tsx',
+      'pages/**/*.tsx',
       'contents/**/*.mdx',
       '!contents/*.mdx',
       '!pages/_*.tsx',
+      '!pages/**/[*.tsx',
       '!pages/api',
       '!pages/404.tsx',
     ])
