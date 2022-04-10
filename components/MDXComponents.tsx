@@ -1,6 +1,5 @@
 import NextLink from 'next/link'
 import { Box, Button, Text, Title } from '@mantine/core'
-
 const CustomLink = (props: any) => {
   const href = props.href
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
@@ -15,7 +14,6 @@ const CustomLink = (props: any) => {
 
   return <Button component='a' {...props} />
 }
-
 interface MDXProps {
   props: string
 }

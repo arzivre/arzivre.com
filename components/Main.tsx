@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Container } from '@mantine/core'
 import { HeaderArzivre } from './Header'
-import FooterArzivre from './Footer'
+import { FooterArzivre } from './Footer'
 
 interface MainProps {
   children: React.ReactNode
@@ -23,7 +23,9 @@ const Main = ({ children }: MainProps) => {
           { link: '/contact', label: 'Contact' },
         ]}
       />
-      <Container size={'xl'}>{children}</Container>
+      <Container size={'xl'}>
+        {children}
+      </Container>
       <FooterArzivre />
     </>
   )

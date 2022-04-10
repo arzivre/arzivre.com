@@ -4,10 +4,10 @@ import matter from 'gray-matter'
 export async function getPost(slug: string) {
   const source = await readFile(`contents/posts/${slug}.mdx`, 'utf8')
   const {
-    data: { publishedAt, title, summary, image },
+    data: { date, title, excerpt, image },
     content,
   } = matter(source)
-  return { publishedAt, title, summary, image, content }
+  return { date, title, excerpt, image, content }
 }
 
 export async function getPosts() {

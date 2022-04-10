@@ -1,4 +1,6 @@
+import NextLink from 'next/link'
 import {
+  Button,
   Card,
   Container,
   createStyles,
@@ -75,9 +77,14 @@ const Blog = () => {
         All Post
       </Title>
       <div>
-        <Text weight={500}>text</Text>
-        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
-          text
+        <Text weight={500}>
+          <NextLink href='/blog/web-developer-workflow' passHref>
+            <Button component='a'>Web Developer Workflow</Button>
+          </NextLink>
+        </Text>
+        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
+          As someone who does several full stack projects as well as does full
+          stack projects at work, I`&apos;`d summarize my suggestions
         </Text>
       </div>
       <div>

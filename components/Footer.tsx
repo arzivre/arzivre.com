@@ -3,8 +3,6 @@ import {
   BrandTwitter,
   BrandYoutube,
   BrandInstagram,
-  Location,
-  Mail,
 } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({

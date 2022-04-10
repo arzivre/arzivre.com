@@ -1,0 +1,29 @@
+---
+slug: 'cara-tulis-css-di-nextjs'
+title: 'Cara tulis CSS di Nextjs'
+date: '2022-04-10'
+excerpt: 'Bagaimana cara tulis css di nextjs'
+image: ''
+---
+
+# Cara tulis CSS di Nextjs
+
+Nextjs memiliki beberapa cara untuk menulis CSS
+
+- Global CSS
+  dengan menulis css di external file
+
+- Components styles dengan Styled JSX
+
+```jsx
+<nav>
+  <h1>Brand</h1>
+  <style jsx>
+    {`
+      h1 {
+        color: blue;
+      }
+    `}
+  </style>
+</nav>
+```

@@ -111,7 +111,7 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
   return (
     <Header height={HEADER_HEIGHT} className={classes.header} mb={20}>
       <Container size={'xl'} className={classes.inner}>
-        <NextLink href={'/'} as={'/home'} passHref>
+        <NextLink href={'/'} as={'/'} passHref>
           <Button
             component='a'
             style={{ background: 'none', color: '#101113' }}
