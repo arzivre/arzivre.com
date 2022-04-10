@@ -14,10 +14,15 @@ export async function getPosts() {
   const slugs = await getSlugs()
   const posts = []
   for (const slug of slugs) {
-    const post = await getPost(slug)
+    const { date, title, excerpt } = await getPost(slug)
+    const post = { title, date, excerpt }
     posts.push({ slug, ...post })
   }
-  return posts
+  posts.sort(function (a, b) {
+    //@ts-ignore
+    return new Date(b.date) - new Date(a.date)
+  })
+  return posts.slice(0, 9)
 }
 
 export async function getSlugs() {

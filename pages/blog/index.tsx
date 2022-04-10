@@ -9,6 +9,15 @@ import {
   Title,
 } from '@mantine/core'
 import { Search } from 'tabler-icons-react'
+import { getPosts } from 'libs/posts'
+import { Key, ReactChild, ReactFragment, ReactPortal } from 'react'
+
+export async function getStaticProps() {
+  const posts = await getPosts()
+  return {
+    props: { posts },
+  }
+}
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -53,8 +62,16 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }))
-
-const Blog = () => {
+interface BlogIndexProps {
+  posts: [PostProps]
+}
+interface PostProps {
+  date: Key | number
+  slug: string
+  title: string
+  excerpt: string
+}
+const Blog = ({ posts }: BlogIndexProps) => {
   const { classes } = useStyles()
   return (
     <Container size={'md'}>
@@ -76,52 +93,40 @@ const Blog = () => {
       <Title order={2} mt={20} mb={10}>
         All Post
       </Title>
-      <article>
-        <NextLink href='/blog/web-developer-workflow' passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113', padding: 0 }}
-          >
-            <Text weight={500} size='lg'>
-              Web Developer Workflow
-            </Text>
-          </Button>
-        </NextLink>
-        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
-          As someone who does several full stack projects as well as does full
-          stack projects at work, I`&apos;`d summarize my suggestions
-        </Text>
-      </article>
-      <article>
-        <NextLink href='/blog/components' passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113', padding: 0 }}
-          >
-            <Text weight={500} size='lg'>
-              Tes components
-            </Text>
-          </Button>
-        </NextLink>
-        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
+      {posts.map((post: PostProps) => (
+        <article key={post.date}>
+          <NextLink href={`/blog/${post.slug}`} passHref>
+            <Button
+              component='a'
+              style={{ background: 'none', color: '#101113', padding: 0 }}
+            >
+              <Text weight={500} size='lg'>
+                {post.title}
+              </Text>
+            </Button>
+          </NextLink>
+          <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
+            {post.excerpt}
+          </Text>
+        </article>
+      ))}
+      <NextLink href='/blog/components' passHref>
+        <Button
+          component='a'
+          style={{ background: 'none', color: '#101113', padding: 0 }}
+        >
           Tes components
-        </Text>
-      </article>
-      <article>
-        <NextLink href='/blog/tes' passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113', padding: 0 }}
-          >
-            <Text weight={500} size='lg'>
-              Tes
-            </Text>
-          </Button>
-        </NextLink>
-        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
-          tes
-        </Text>
-      </article>
+        </Button>
+      </NextLink>
+      <br />
+      <NextLink href='/blog/tes' passHref>
+        <Button
+          component='a'
+          style={{ background: 'none', color: '#101113', padding: 0 }}
+        >
+          Tes
+        </Button>
+      </NextLink>
     </Container>
   )
 }
