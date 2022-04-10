@@ -6,15 +6,22 @@ excerpt: 'Visualize my journey through the scenic lands of Norway with rich, stu
 image: ''
 ---
 
-# Web Developer Workflow
+javascript
 
-## Define your general design
+```javascript
+export async function getSlugs() {
+  const suffix = '.mdx'
+  const files = await readdir('contents/posts')
+  return files
+    .filter((file) => file.endsWith(suffix))
+    .map((file) => file.slice(0, -suffix.length))
+}
+```
 
-### Figure out your infrastructure and architecture
-
+jsx
 
 ```jsx
-<nav>
+<div>
   <h1>Brand</h1>
   <style jsx>
     {`
@@ -23,5 +30,5 @@ image: ''
       }
     `}
   </style>
-</nav>
+</div>
 ```

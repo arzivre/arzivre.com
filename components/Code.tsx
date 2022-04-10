@@ -1,38 +1,61 @@
-import { Prism } from '@mantine/prism'
+import theme from 'prism-react-renderer/themes/vsDark'
 import Highlight, { defaultProps } from 'prism-react-renderer'
+import { Button, Grid, Group } from '@mantine/core'
+import { useClipboard } from '@mantine/hooks'
+
+const Copy = ({ code }: any) => {
+  const clipboard = useClipboard({ timeout: 500 })
+  return (
+    <Button
+      color={clipboard.copied ? 'teal' : 'blue'}
+      onClick={() => clipboard.copy(code)}
+    >
+      {clipboard.copied ? 'Copied' : 'Copy'}
+    </Button>
+  )
+}
 interface CodeProps {
   children: any
   className: any
 }
 
-export default function Code({ children, className }: CodeProps) {
-  const language = className.replace(/language-/, '')
+export const Code = ({ children, className }: CodeProps) => {
+  const language = className?.replace(/language-/, '')
   return (
-    <Highlight {...defaultProps} code={children} language={language}>
+    <Highlight
+      {...defaultProps}
+      theme={theme}
+      code={children}
+      language={language}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={i} {...getTokenProps({ token, key })} />
+        <pre
+          className={className}
+          style={{
+            ...style,
+            marginTop: 20,
+            marginBottom: 20,
+            padding: 16,
+            borderRadius: '0.25rem',
+          }}
+        >
+          <Grid>
+            <Grid.Col span={11}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key={i} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
               ))}
-            </div>
-          ))}
+            </Grid.Col>
+            <Grid.Col span={1}>
+              <Copy code={children.trim()} />
+            </Grid.Col>
+          </Grid>
         </pre>
       )}
     </Highlight>
   )
 }
-
-const demoCode = `import { Button } from '@mantine/core';
-
-function Demo() {
-  return <Button>Hello</Button>
-}`
-interface CodeProps {
-  children: any
-  language: any
-}
-export const CodePrism = ({ language, children }: CodeProps) => {
-  return <Prism language={language}>{children}</Prism>
-}
+export default Code

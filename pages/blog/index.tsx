@@ -93,6 +93,21 @@ const Blog = () => {
         </Text>
       </article>
       <article>
+        <NextLink href='/blog/components' passHref>
+          <Button
+            component='a'
+            style={{ background: 'none', color: '#101113', padding: 0 }}
+          >
+            <Text weight={500} size='lg'>
+              Tes components
+            </Text>
+          </Button>
+        </NextLink>
+        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
+          Tes components
+        </Text>
+      </article>
+      <article>
         <NextLink href='/blog/tes' passHref>
           <Button
             component='a'

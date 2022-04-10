@@ -1,0 +1,63 @@
+---
+slug: 'react-snippet'
+title: 'Snippet'
+date: '2021-11-15'
+excerpt: 'Visualize my journey through the scenic lands of Norway with rich, stunning pictures and daily travel logs.'
+image: ''
+---
+
+prism-react-renderer
+with chakra-ui
+
+```jsx
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import theme from 'prism-react-renderer/themes/dracula'
+import { Button, Box, Flex, useClipboard } from '@chakra-ui/react'
+
+function CopyButton({ value }) {
+  const { onCopy, hasCopied } = useClipboard(value)
+  return (
+    <Button ml={3} aria-label='Copy text' role='button' onClick={onCopy}>
+      {hasCopied ? 'Copied' : 'Copy'}
+    </Button>
+  )
+}
+
+export default function Code({ children, className }) {
+  const language = className.replace(/language-/, '')
+  return (
+    <Highlight
+      {...defaultProps}
+      theme={theme}
+      code={children.trim()}
+      language={language}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className={className}
+          style={{
+            ...style,
+            marginTop: 20,
+            marginBottom: 20,
+            padding: 16,
+            borderRadius: '0.25rem',
+          }}
+        >
+          <Flex overflowX='auto'>
+            <Box flexGrow={1}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </Box>
+            <CopyButton value={children.trim()} />
+          </Flex>
+        </pre>
+      )}
+    </Highlight>
+  )
+}
+```

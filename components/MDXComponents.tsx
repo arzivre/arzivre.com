@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import { Box, Button, Text, Title } from '@mantine/core'
-import { CodePrism as Code } from './Code'
+import { Code } from './Code'
 
 const CustomLink = (props: any) => {
   const href = props.href
@@ -26,7 +26,6 @@ const MDXComponents = {
   h3: (props: MDXProps) => <Title order={3} {...props} />,
   p: (props: MDXProps) => <Text component='p' mt={4} {...props} />,
   a: CustomLink,
-  pre: (props: any) => <Code {...props} />,
   code: (props: any) => <Code {...props} />,
   ul: (props: MDXProps) => (
     <Box component='ul' pt={2} pl={4} ml={2} {...props} />
