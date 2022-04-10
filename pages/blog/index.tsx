@@ -9,7 +9,6 @@ import {
   Title,
 } from '@mantine/core'
 import { Search } from 'tabler-icons-react'
-import { Demo } from 'components/Code'
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -108,7 +107,6 @@ const Blog = () => {
           tes
         </Text>
       </article>
-      <Demo />
     </Container>
   )
 }
