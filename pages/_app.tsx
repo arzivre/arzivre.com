@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
-import Main from '../components/Main'
+import Main from 'components/Main'
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props

@@ -9,6 +9,7 @@ import {
   Title,
 } from '@mantine/core'
 import { Search } from 'tabler-icons-react'
+import { Demo } from 'components/Code'
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -76,29 +77,38 @@ const Blog = () => {
       <Title order={2} mt={20} mb={10}>
         All Post
       </Title>
-      <div>
-        <Text weight={500}>
-          <NextLink href='/blog/web-developer-workflow' passHref>
-            <Button component='a'>Web Developer Workflow</Button>
-          </NextLink>
-        </Text>
+      <article>
+        <NextLink href='/blog/web-developer-workflow' passHref>
+          <Button
+            component='a'
+            style={{ background: 'none', color: '#101113', padding: 0 }}
+          >
+            <Text weight={500} size='lg'>
+              Web Developer Workflow
+            </Text>
+          </Button>
+        </NextLink>
         <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
           As someone who does several full stack projects as well as does full
           stack projects at work, I`&apos;`d summarize my suggestions
         </Text>
-      </div>
-      <div>
-        <Text weight={500}>text</Text>
-        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
-          text
+      </article>
+      <article>
+        <NextLink href='/blog/tes' passHref>
+          <Button
+            component='a'
+            style={{ background: 'none', color: '#101113', padding: 0 }}
+          >
+            <Text weight={500} size='lg'>
+              Tes
+            </Text>
+          </Button>
+        </NextLink>
+        <Text size='sm' color='gray' style={{ lineHeight: 1.5 }}>
+          tes
         </Text>
-      </div>
-      <div>
-        <Text weight={500}>text</Text>
-        <Text size='sm' color='dimmed' style={{ lineHeight: 1.5 }}>
-          text
-        </Text>
-      </div>
+      </article>
+      <Demo />
     </Container>
   )
 }
