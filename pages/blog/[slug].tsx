@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: slugs.map((slug) => ({
       params: { slug },
     })),
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -25,9 +25,7 @@ export const getStaticProps: GetStaticProps = async ({
   params: { slug },
 }: any) => {
   const { content, date, title, excerpt, image } = await getPost(slug)
-  const body = await serialize(content, {
-    mdxOptions: {},
-  })
+  const body = await serialize(content)
   return { props: { post: { body, date, title, excerpt, image, slug } } }
 }
 
@@ -40,7 +38,7 @@ const Post = ({ post }: any) => {
       <main>
         <p>{post.publishedAt}</p>
 
-        <MDXRemote {...post.body} components={components} />
+        <MDXRemote {...post.body} components={components as any} />
       </main>
     </Container>
   )
