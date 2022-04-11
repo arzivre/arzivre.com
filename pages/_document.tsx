@@ -19,7 +19,7 @@ export default class _Document extends Document {
             }}
           />
         </Head>
-        <body style={{ background: '#E9ECEF' }}>
+        <body>
           <Main />
           <NextScript />
         </body>

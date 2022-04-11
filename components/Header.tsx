@@ -16,7 +16,7 @@ const HEADER_HEIGHT = 60
 
 const useStyles = createStyles((theme) => ({
   header: {
-    background: 'transparent',
+    background: '#191621',
     border: 'none',
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
@@ -109,35 +109,41 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
   ))
 
   return (
-    <Header height={HEADER_HEIGHT} className={classes.header} mb={20}>
-      <Container size={'xl'} className={classes.inner}>
-        <NextLink href={'/'} as={'/'} passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113' }}
+    <main style={{ background: 'transparent' }}>
+      <Header height={HEADER_HEIGHT} className={classes.header}>
+        <Container size={'xl'} className={classes.inner}>
+          <NextLink href={'/'} as={'/'} passHref>
+            <Button
+              component='a'
+              style={{ background: 'none', color: '#0fb6d6' }}
+            >
+              <h1>Arzivre</h1>
+            </Button>
+          </NextLink>
+          <Group spacing={5} className={classes.links}>
+            {items}
+          </Group>
+
+          <Burger
+            opened={opened}
+            onClick={() => toggleOpened()}
+            className={classes.burger}
+            size='sm'
+          />
+
+          <Transition
+            transition='pop-top-right'
+            duration={200}
+            mounted={opened}
           >
-            <h1>Arzivre</h1>
-          </Button>
-        </NextLink>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-
-        <Burger
-          opened={opened}
-          onClick={() => toggleOpened()}
-          className={classes.burger}
-          size='sm'
-        />
-
-        <Transition transition='pop-top-right' duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
-      </Container>
-    </Header>
+            {(styles) => (
+              <Paper className={classes.dropdown} withBorder style={styles}>
+                {items}
+              </Paper>
+            )}
+          </Transition>
+        </Container>
+      </Header>
+    </main>
   )
 }

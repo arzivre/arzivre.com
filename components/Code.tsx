@@ -1,6 +1,6 @@
-import theme from 'prism-react-renderer/themes/vsDark'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import { Button, Grid, Group } from '@mantine/core'
+import theme from 'prism-react-renderer/themes/dracula'
+import { Button, Grid, Loader } from '@mantine/core'
 import { useClipboard } from '@mantine/hooks'
 
 const Copy = ({ code }: any) => {
@@ -14,6 +14,7 @@ const Copy = ({ code }: any) => {
     </Button>
   )
 }
+
 interface CodeProps {
   children: any
   className: any
@@ -21,9 +22,11 @@ interface CodeProps {
 
 export const Code = ({ children, className }: CodeProps) => {
   const language = className?.replace(/language-/, '')
+
   if (language == 'mermaid') {
     return <div className={language}>{children}</div>
   }
+
   return (
     <Highlight
       {...defaultProps}

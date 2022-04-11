@@ -1,9 +1,5 @@
 import { Container, createStyles, ActionIcon, Group, Text } from '@mantine/core'
-import {
-  BrandTwitter,
-  BrandYoutube,
-  BrandInstagram,
-} from 'tabler-icons-react'
+import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -30,24 +26,26 @@ const useStyles = createStyles((theme) => ({
 export const FooterArzivre = () => {
   const { classes } = useStyles()
   return (
-    <Container size={'xl'} className={classes.footer}>
-      <Text color='dimmed'>
-        <Text>Kediri, Jawa Timur</Text>
-        arzivreart@gmail.com
-      </Text>
+    <main style={{ background: 'black' }}>
+      <Container size={'xl'} className={classes.footer}>
+        <Text color='dimmed'>
+          <Text>Kediri, Jawa Timur</Text>
+          arzivreart@gmail.com
+        </Text>
 
-      <Group spacing={0} className={classes.links} position='right' noWrap>
-        <ActionIcon size='lg'>
-          <BrandTwitter size={18} />
-        </ActionIcon>
-        <ActionIcon size='lg'>
-          <BrandYoutube size={18} />
-        </ActionIcon>
-        <ActionIcon size='lg'>
-          <BrandInstagram size={18} />
-        </ActionIcon>
-      </Group>
-    </Container>
+        <Group spacing={0} className={classes.links} position='right' noWrap>
+          <ActionIcon size='lg'>
+            <BrandTwitter size={18} />
+          </ActionIcon>
+          <ActionIcon size='lg'>
+            <BrandYoutube size={18} />
+          </ActionIcon>
+          <ActionIcon size='lg'>
+            <BrandInstagram size={18} />
+          </ActionIcon>
+        </Group>
+      </Container>
+    </main>
   )
 }
 export default FooterArzivre

@@ -4,11 +4,13 @@ import { Center, Container, Divider, Grid, Text, Title } from '@mantine/core'
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Hero />
-      <Project />
-      <Contact />
-    </>
+    <main style={{ background: '#100e17' }}>
+      <Container size={'xl'}>
+        <Hero />
+        <Project />
+        <Contact />
+      </Container>
+    </main>
   )
 }
 
@@ -17,7 +19,7 @@ export default Home
 const Hero = () => {
   return (
     <>
-      <Center mt={100}>
+      <Center pt={100}>
         <Title order={1}>Web Developer</Title>
       </Center>
       <Container size={'md'} style={{ marginBottom: '400px' }}>

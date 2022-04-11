@@ -23,9 +23,7 @@ const Main = ({ children }: MainProps) => {
           { link: '/contact', label: 'Contact' },
         ]}
       />
-      <Container size={'xl'}>
         {children}
-      </Container>
       <FooterArzivre />
     </>
   )

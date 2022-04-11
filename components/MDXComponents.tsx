@@ -24,7 +24,13 @@ const MDXComponents = {
   h1: (props: MDXProps) => <Title order={1} {...props} />,
   h2: (props: MDXProps) => <Title order={2} {...props} />,
   h3: (props: MDXProps) => <Title order={3} {...props} />,
-  p: (props: MDXProps) => <Text component='p' mt={4} {...props} />,
+  p: (props: MDXProps) => (
+    <Text
+      component='p'
+      mt={4}
+      {...props}
+    />
+  ),
   a: CustomLink,
   code: (props: any) => <Code {...props} />,
   ul: (props: MDXProps) => (

@@ -31,16 +31,22 @@ export const getStaticProps: GetStaticProps = async ({
 
 const Post = ({ post }: any) => {
   return (
-    <Container size={'md'}>
+    <>
       <Head>
         <title>{post.title} - Arzivre</title>
       </Head>
-      <main>
-        <p>{post.date.slice(0, 10)}</p>
+      <main
+        style={{ background: '#0d0b12', margin: 0, padding: '20px 0 20px' }}
+      >
+        <Container size={'md'}>
+          <p>
+            {post.date.slice(0, 10)}
+          </p>
 
-        <MDXRemote {...post.body} components={MDXComponents} />
+          <MDXRemote {...post.body} components={MDXComponents} />
+        </Container>
       </main>
-    </Container>
+    </>
   )
 }
 
