@@ -18,17 +18,28 @@ export async function getSlugs() {
 }
 ```
 
-jsx
+mermaid
 
-```jsx
-<div>
-  <h1>Brand</h1>
-  <style jsx>
-    {`
-      h1 {
-        color: blue;
-      }
-    `}
-  </style>
-</div>
+```mermaid
+%%{init: {'theme':'base',themeVariables': { 'primaryColor': '#364FC7'}}}%%
+graph LR
+ A[Consumed] --> C[Literature]
+ B[Come to mind] --> D[Fleeting]
+
+ subgraph Capture
+	 C[Literature]
+	 D[Fleeting]
+ end
+
+ subgraph Connect
+	 C --> E[Hub]
+	 D --> E[Hub]
+ end
+
+ subgraph Crystallize
+	 direction TB
+	 E[Hub] --> F[Permanent]
+ end
+
+ F --> G[Insight & Ideas]
 ```

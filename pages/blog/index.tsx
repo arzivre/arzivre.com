@@ -127,6 +127,7 @@ const Blog = ({ posts }: BlogIndexProps) => {
           Tes
         </Button>
       </NextLink>
+      <div className='mermaid'>graph LR A--&gt;B</div>
     </Container>
   )
 }

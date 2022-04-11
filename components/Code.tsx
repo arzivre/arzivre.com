@@ -21,6 +21,9 @@ interface CodeProps {
 
 export const Code = ({ children, className }: CodeProps) => {
   const language = className?.replace(/language-/, '')
+  if (language == 'mermaid') {
+    return <div className={language}>{children}</div>
+  }
   return (
     <Highlight
       {...defaultProps}

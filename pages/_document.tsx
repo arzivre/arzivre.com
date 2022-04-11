@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { createGetInitialProps } from '@mantine/next'
 
@@ -9,7 +10,15 @@ export default class _Document extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js' />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `mermaid.initialize({startOnLoad: true});`,
+            }}
+          />
+        </Head>
         <body style={{ background: '#E9ECEF' }}>
           <Main />
           <NextScript />

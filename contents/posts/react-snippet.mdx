@@ -6,8 +6,23 @@ excerpt: 'Visualize my journey through the scenic lands of Norway with rich, stu
 image: ''
 ---
 
-prism-react-renderer
-with chakra-ui
+# Snippet
+
+## Mermaid theme
+
+````json
+{
+  "theme": "base",
+  "themeVariables":
+  { "primaryColor": "#364FC7",
+  "edgeLabelBackground":"#ffffee",
+  "tertiaryColor": "#fff0f0"}
+}
+```
+
+
+## prism-react-renderer with chakra-ui
+
 
 ```jsx
 import Highlight, { defaultProps } from 'prism-react-renderer'
@@ -60,4 +75,4 @@ export default function Code({ children, className }) {
     </Highlight>
   )
 }
-```
+````
