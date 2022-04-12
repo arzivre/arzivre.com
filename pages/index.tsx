@@ -43,7 +43,7 @@ const Project = () => {
         color={'dark'}
         size='xl'
         label={
-          <Title order={2} style={{ fontSize: 40, color: '#101113' }}>
+          <Title order={2} style={{ fontSize: 40 }}>
             Projects
           </Title>
         }

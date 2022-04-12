@@ -38,7 +38,7 @@ const Post = ({ post }: any) => {
       <main
         style={{ background: '#0d0b12', margin: 0, padding: '20px 0 20px' }}
       >
-        <Container size={'md'}>
+        <Container size={'sm'}>
           <p>
             {post.date.slice(0, 10)}
           </p>

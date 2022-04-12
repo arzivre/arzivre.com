@@ -9,6 +9,7 @@ import {
   Paper,
   Transition,
   Button,
+  Title,
 } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
 
@@ -117,7 +118,16 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
               component='a'
               style={{ background: 'none', color: '#0fb6d6' }}
             >
-              <h1>Arzivre</h1>
+              <Title
+                order={1}
+                style={{
+                  fontFamily: 'Babylonica',
+                  fontSize: '3rem',
+                  fontWeight: '100',
+                }}
+              >
+                Arzivre
+              </Title>
             </Button>
           </NextLink>
           <Group spacing={5} className={classes.links}>

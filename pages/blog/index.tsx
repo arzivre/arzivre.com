@@ -4,6 +4,7 @@ import {
   Card,
   Container,
   createStyles,
+  Divider,
   Input,
   Text,
   Title,
@@ -15,7 +16,7 @@ import { Key, ReactChild, ReactFragment, ReactPortal } from 'react'
 const useStyles = createStyles((theme) => ({
   title: {
     color: '#0fb6d6',
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `${theme.fontFamily}`,
     fontWeight: 900,
     lineHeight: 1.05,
     maxWidth: 500,
@@ -41,15 +42,9 @@ const useStyles = createStyles((theme) => ({
 
   subTitle: {
     color: '#0fb6d6',
+    fontFamily: `${theme.fontFamily}`,
     '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.dark[9],
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[9]
-          : theme.colors.indigo[0],
+      color: theme.colorScheme === 'dark' ? '#f4569d' : theme.colors.indigo[0],
     },
 
     [theme.fn.smallerThan('md')]: {
@@ -77,7 +72,7 @@ const useStyles = createStyles((theme) => ({
   control: {
     paddingLeft: 50,
     paddingRight: 50,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: ` ${theme.fontFamily}`,
     fontSize: 22,
 
     [theme.fn.smallerThan('md')]: {
@@ -106,7 +101,7 @@ const Blog = ({ posts }: BlogIndexProps) => {
   const { classes } = useStyles()
   return (
     <main style={{ background: '#100e17', padding: '20px 0 20px' }}>
-      <Container size={'md'}>
+      <Container size={'sm'}>
         <Title className={classes.title} mb={20}>
           My Blog Post
         </Title>
@@ -134,6 +129,7 @@ const Blog = ({ posts }: BlogIndexProps) => {
               >
                 <Text weight={500} size='lg' className={classes.subTitle}>
                   {post.title}
+                  <Divider size={'xs'} color='cyan' />
                 </Text>
               </Button>
             </NextLink>

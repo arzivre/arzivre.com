@@ -21,14 +21,33 @@ interface MDXProps {
 }
 
 const MDXComponents = {
-  h1: (props: MDXProps) => <Title order={1} {...props} />,
-  h2: (props: MDXProps) => <Title order={2} {...props} />,
-  h3: (props: MDXProps) => <Title order={3} {...props} />,
+  h1: (props: MDXProps) => (
+    <Title
+      order={1}
+      {...props}
+      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
+    />
+  ),
+  h2: (props: MDXProps) => (
+    <Title
+      order={2}
+      {...props}
+      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
+    />
+  ),
+  h3: (props: MDXProps) => (
+    <Title
+      order={3}
+      {...props}
+      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
+    />
+  ),
   p: (props: MDXProps) => (
     <Text
       component='p'
       mt={4}
       {...props}
+      style={{ color: '#bebebe', fontFamily: 'Varela Round' }}
     />
   ),
   a: CustomLink,
