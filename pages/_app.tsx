@@ -26,9 +26,9 @@ export default function App(props: AppProps) {
           other: { backgroundColor: '#E9ECEF' },
         }}
       >
-        <Main>
-          <Component {...pageProps} />
-        </Main>
+          <Main>
+              <Component {...pageProps} />
+          </Main>
       </MantineProvider>
     </>
   )

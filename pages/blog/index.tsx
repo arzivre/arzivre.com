@@ -17,19 +17,15 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: '#0fb6d6',
     fontFamily: `${theme.fontFamily}`,
+    fontSize: 100,
     fontWeight: 900,
     lineHeight: 1.05,
-    maxWidth: 500,
-    fontSize: 48,
+    padding: '0.5rem 0',
 
     '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[0]
-          : theme.colors.dark[9],
       color:
         theme.colorScheme === 'dark'
-          ? theme.colors.gray[9]
+          ? theme.fn.linearGradient(133, 'red', 'orange', 'cyan', 'white')
           : theme.colors.indigo[0],
     },
 
@@ -64,9 +60,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   search: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
+    padding: '0.5rem 0',
   },
 
   control: {
@@ -103,13 +97,10 @@ const Blog = ({ posts }: BlogIndexProps) => {
     <main style={{ background: '#100e17', padding: '20px 0 20px' }}>
       <Container size={'sm'}>
         <Title className={classes.title} mb={20}>
-          My Blog Post
+          Blog
         </Title>
         <div className='lorem' style={{ color: '#bebebe' }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
-          voluptate, quaerat incidunt autem corporis fuga eos vitae
-          necessitatibus molestiae eligendi esse adipisci exercitationem,
-          provident ad sequi aut inventore sint! Ad.
+          Share my thoughts and experiences.
         </div>
         <Input
           icon={<Search size={16} />}
@@ -138,23 +129,6 @@ const Blog = ({ posts }: BlogIndexProps) => {
             </Text>
           </article>
         ))}
-        <NextLink href='/blog/components' passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113', padding: 0 }}
-          >
-            Tes components
-          </Button>
-        </NextLink>
-        <br />
-        <NextLink href='/blog/tes' passHref>
-          <Button
-            component='a'
-            style={{ background: 'none', color: '#101113', padding: 0 }}
-          >
-            Tes
-          </Button>
-        </NextLink>
       </Container>
     </main>
   )

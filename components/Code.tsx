@@ -1,6 +1,6 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/dracula'
-import { Button, Grid, Loader } from '@mantine/core'
+import { Button, Grid } from '@mantine/core'
 import { useClipboard } from '@mantine/hooks'
 
 const Copy = ({ code }: any) => {

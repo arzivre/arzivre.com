@@ -21,7 +21,7 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors.gray[7]} 0%, ${theme.colors.gray[9]} 100%)`,
     borderRadius: theme.radius.md,
     padding: theme.spacing.xl * 2.5,
-
+margin: '100px ',
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       padding: theme.spacing.xl * 1.5,
     },

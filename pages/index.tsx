@@ -19,17 +19,14 @@ export default Home
 const Hero = () => {
   return (
     <>
-      <Center pt={100}>
-        <Title order={1}>Web Developer</Title>
-      </Center>
-      <Container size={'md'} style={{ marginBottom: '400px' }}>
-        <Text>Hey, ...</Text>
+      <Container size={'md'} style={{ padding: '100px' }}>
+        <Text weight={500} size='xl' style={{ color: '#0fb6d6' }}>
+          Saya Muhammad Sony Fauzi
+        </Text>
 
-        <Text weight={200} size='xl'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eius
-          natus quos fugit sint, nulla, repudiandae accusamus reiciendis quia
-          dolorum ullam earum aliquam tempora minus assumenda placeat dolor modi
-          nostrum.
+        <Text weight={600} style={{ fontSize: '4rem' }}>
+          Freelance Web developer dan Penulis. Saya suka main game dan terkadang
+          membaca buku.
         </Text>
       </Container>
     </>
@@ -43,9 +40,11 @@ const Project = () => {
         color={'dark'}
         size='xl'
         label={
-          <Title order={2} style={{ fontSize: 40 }}>
-            Projects
-          </Title>
+          <>
+            <Title order={2} style={{ fontSize: 40 }}>
+              Projects
+            </Title>
+          </>
         }
         labelPosition='center'
         labelProps={{
