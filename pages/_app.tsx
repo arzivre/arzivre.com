@@ -23,12 +23,12 @@ export default function App(props: AppProps) {
           /** Put your mantine theme override here */
           colorScheme: 'dark',
           fontFamily: 'Varela Round, sans-serif, Babylonica',
-          other: { backgroundColor: '#E9ECEF' },
+          other: {},
         }}
       >
-          <Main>
-              <Component {...pageProps} />
-          </Main>
+        <Main>
+          <Component {...pageProps} />
+        </Main>
       </MantineProvider>
     </>
   )

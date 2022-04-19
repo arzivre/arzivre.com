@@ -1,5 +1,7 @@
+import { Key } from 'react'
 import NextLink from 'next/link'
 import {
+  Anchor,
   Button,
   Card,
   Container,
@@ -11,34 +13,32 @@ import {
 } from '@mantine/core'
 import { Search } from 'tabler-icons-react'
 import { getPosts } from 'libs/posts'
-import { Key, ReactChild, ReactFragment, ReactPortal } from 'react'
 
 const useStyles = createStyles((theme) => ({
   title: {
-    color: '#0fb6d6',
-    fontFamily: `${theme.fontFamily}`,
+    fontFamily: `Greycliff CF`,
+    color: theme.colors.gray[3],
+    lineHeight: 1,
+  },
+
+  hero: {
     fontSize: 100,
-    fontWeight: 900,
-    lineHeight: 1.05,
-    padding: '0.5rem 0',
+    marginBottom: '20px',
 
     '&:hover': {
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.fn.linearGradient(133, 'red', 'orange', 'cyan', 'white')
-          : theme.colors.indigo[0],
+      color: theme.colorScheme === 'dark' ? '#f4569d' : theme.colors.indigo[0],
     },
 
     [theme.fn.smallerThan('md')]: {
       maxWidth: '100%',
-      fontSize: 34,
+      fontSize: 50,
       lineHeight: 1.15,
     },
   },
 
-  subTitle: {
-    color: '#0fb6d6',
-    fontFamily: `${theme.fontFamily}`,
+  subtitle: {
+    fontSize: 50,
+
     '&:hover': {
       color: theme.colorScheme === 'dark' ? '#f4569d' : theme.colors.indigo[0],
     },
@@ -49,29 +49,8 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  description: {
-    color: theme.white,
-    opacity: 0.75,
-    maxWidth: 500,
-
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '100%',
-    },
-  },
-
   search: {
     padding: '0.5rem 0',
-  },
-
-  control: {
-    paddingLeft: 50,
-    paddingRight: 50,
-    fontFamily: ` ${theme.fontFamily}`,
-    fontSize: 22,
-
-    [theme.fn.smallerThan('md')]: {
-      width: '100%',
-    },
   },
 }))
 
@@ -92,39 +71,34 @@ interface PostProps {
   excerpt: string
 }
 const Blog = ({ posts }: BlogIndexProps) => {
-  const { classes } = useStyles()
+  const { classes, cx } = useStyles()
   return (
-    <main style={{ background: '#100e17', padding: '20px 0 20px' }}>
+    <main style={{ background: '#100e17', padding: '20px 0' }}>
       <Container size={'sm'}>
-        <Title className={classes.title} mb={20}>
-          Blog
-        </Title>
-        <div className='lorem' style={{ color: '#bebebe' }}>
+        <Title className={cx(classes.title, classes.hero)}>Blog</Title>
+        <Text color='#bebebe' mb={10}>
           Share my thoughts and experiences.
-        </div>
+        </Text>
         <Input
           icon={<Search size={16} />}
-          placeholder='Search'
-          my={20}
+          placeholder='Blog apa yang ingin kamu baca ?'
           className={classes.search}
         />
-        <Title order={2} mt={20} mb={10} style={{ color: '#f4569d' }}>
+        <Title
+          order={2}
+          my={20}
+          className={cx(classes.title, classes.subtitle)}
+        >
           All Post
         </Title>
         {posts.map((post: PostProps) => (
           <article key={post.date}>
             <NextLink href={`/blog/${post.slug}`} passHref>
-              <Button
-                component='a'
-                style={{ background: 'none', color: '#101113', padding: 0 }}
-              >
-                <Text weight={500} size='lg' className={classes.subTitle}>
-                  {post.title}
-                  <Divider size={'xs'} color='cyan' />
-                </Text>
-              </Button>
+              <Anchor className={classes.title}>
+                <Title order={3}>{post.title}</Title>
+              </Anchor>
             </NextLink>
-            <Text size='sm' color='#bebebe' style={{ lineHeight: 1.5 }}>
+            <Text size='md' color='#bebebe' mb={20} style={{ lineHeight: 1.5 }}>
               {post.excerpt}
             </Text>
           </article>

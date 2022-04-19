@@ -1,6 +1,13 @@
 import NextLink from 'next/link'
-import { Box, Button, Text, Title } from '@mantine/core'
+import { Anchor, Box, Button, Text, Title } from '@mantine/core'
 import { Code } from './Code'
+
+const title = {
+  color: '#DEE2E6',
+  fontFamily: 'Greycliff CF',
+  lineHeight: 1,
+  paddingBottom: '20px',
+}
 
 const CustomLink = (props: any) => {
   const href = props.href
@@ -9,46 +16,41 @@ const CustomLink = (props: any) => {
   if (isInternalLink) {
     return (
       <NextLink href={href} passHref>
-        <Button component='a' {...props} />
+        <Button
+          component='a'
+          {...props}
+          style={{
+            background: 'none',
+            color: '#868E96',
+            cursor: 'pointer',
+            marginLeft: '-1.5em',
+            paddingRight: '0.5em',
+            position: 'absolute',
+            with: '80%',
+            // visibility: 'hidden',
+            '&:hover': {
+              visibility: 'visible',
+            },
+          }}
+        >
+          {props.children}
+        </Button>
       </NextLink>
     )
   }
 
-  return <Button component='a' {...props} />
+  return <Anchor target='_blank' rel='noopener noreferrer' {...props} />
 }
 interface MDXProps {
   props: string
 }
 
 const MDXComponents = {
-  h1: (props: MDXProps) => (
-    <Title
-      order={1}
-      {...props}
-      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
-    />
-  ),
-  h2: (props: MDXProps) => (
-    <Title
-      order={2}
-      {...props}
-      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
-    />
-  ),
-  h3: (props: MDXProps) => (
-    <Title
-      order={3}
-      {...props}
-      style={{ color: '#0fb6d6', fontFamily: 'Varela Round' }}
-    />
-  ),
+  h1: (props: MDXProps) => <Title order={1} {...props} style={title} />,
+  h2: (props: MDXProps) => <Title order={2} {...props} style={title} />,
+  h3: (props: MDXProps) => <Title order={3} {...props} style={title} />,
   p: (props: MDXProps) => (
-    <Text
-      component='p'
-      mt={4}
-      {...props}
-      style={{ color: '#bebebe', fontFamily: 'Varela Round' }}
-    />
+    <Text component='p' mt={4} {...props} style={{ color: '#bebebe' }} />
   ),
   a: CustomLink,
   code: (props: any) => <Code {...props} />,

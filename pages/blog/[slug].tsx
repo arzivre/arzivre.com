@@ -2,7 +2,9 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import { Container } from '@mantine/core'
+import { Container, Title } from '@mantine/core'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import MDXComponents from 'components/MDXComponents'
 import { getPost, getSlugs } from 'libs/posts'
@@ -23,10 +25,19 @@ export const getStaticProps: GetStaticProps = async ({
   const { content, date, title, excerpt, image } = await getPost(slug)
   const body = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     },
   })
   return { props: { post: { body, date, title, excerpt, image, slug } } }
+}
+
+const classes = {
+  main: { background: '#0d0b12', margin: 0, padding: '20px 0' },
+  title: {
+    color: '#0fb6d6',
+    fontSize: '60px',
+    fontFamily: 'Greycliff CF',
+  },
 }
 
 const Post = ({ post }: any) => {
@@ -35,13 +46,12 @@ const Post = ({ post }: any) => {
       <Head>
         <title>{post.title} - Arzivre</title>
       </Head>
-      <main
-        style={{ background: '#0d0b12', margin: 0, padding: '20px 0 20px' }}
-      >
+      <main style={classes.main}>
         <Container size={'sm'}>
-          <p>
-            {post.date.slice(0, 10)}
-          </p>
+          <Title order={1} style={classes.title}>
+            {post.title}
+          </Title>
+          <p>{post.date.slice(0, 10)}</p>
 
           <MDXRemote {...post.body} components={MDXComponents} />
         </Container>
