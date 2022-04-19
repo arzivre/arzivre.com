@@ -28,11 +28,6 @@ export const FooterArzivre = () => {
   return (
     <main style={{ background: 'black' }}>
       <Container size={'xl'} className={classes.footer}>
-        <Text color='dimmed'>
-          <Text>Kediri, Jawa Timur</Text>
-          arzivreart@gmail.com
-        </Text>
-
         <Group spacing={0} className={classes.links} position='right' noWrap>
           <ActionIcon size='lg'>
             <BrandTwitter size={18} />

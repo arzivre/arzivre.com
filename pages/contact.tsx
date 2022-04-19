@@ -21,7 +21,7 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors.gray[7]} 0%, ${theme.colors.gray[9]} 100%)`,
     borderRadius: theme.radius.md,
     padding: theme.spacing.xl * 2.5,
-margin: '100px ',
+    margin: '100px ',
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       padding: theme.spacing.xl * 1.5,
     },
@@ -123,9 +123,16 @@ export default function ContactUs() {
         <div>
           <Title className={classes.title}>Contact Me</Title>
           <Text className={classes.description} mt='sm' mb={30}>
-            Leave your email and I will get back to you within 24 hours
+            arzivreart@gmail.com sonyfauzi@outlook.co.id
           </Text>
-
+          <Text className={classes.description} mt='sm' mb={30}>
+            0813 3205 6357
+          </Text>
+          <Text className={classes.description} mt='sm' mb={30}>
+            akan menjawab dalam 24 jam.
+            <br />
+            Kediri, Jawa Timur.
+          </Text>
           <Group mt='xl'>{icons}</Group>
         </div>
         <form className={classes.form} ref={form} onSubmit={sendEmail}>
@@ -146,7 +153,7 @@ export default function ContactUs() {
           <Textarea
             required
             label='Your message'
-            placeholder='I want to order your goods'
+            placeholder='I want to say hi!'
             name='message'
             minRows={4}
             mt='md'
