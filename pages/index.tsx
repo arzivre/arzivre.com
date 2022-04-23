@@ -17,28 +17,27 @@ export default Home
 
 const Hero = () => {
   return (
-    <>
-      <Container size={'md'} style={{ padding: '100px' }}>
-        <Text
-          size='xl'
-          weight={600}
-          variant='gradient'
-          gradient={{ from: 'blue', to: 'teal', deg: 45 }}
-        >
-          Saya Muhammad Sony Fauzi
-        </Text>
+    <article
+      style={{ margin: '0 auto', paddingTop: '200px', paddingBottom: '200px' }}
+    >
+      <Text
+        size='xl'
+        weight={600}
+        variant='gradient'
+        gradient={{ from: 'blue', to: 'teal', deg: 45 }}
+      >
+        Saya Muhammad Sony Fauzi
+      </Text>
 
-        <Text
-          style={{
-            fontSize:
-              'calc(25px + (70 - 25) * ((100vw - 300px) / (1600 - 300)))',
-          }}
-        >
-          Freelance Web developer dan Penulis. Saya suka main game dan terkadang
-          membaca buku.
-        </Text>
-      </Container>
-    </>
+      <Text
+        style={{
+          fontSize: 'calc(25px + (70 - 25) * ((100vw - 300px) / (1600 - 300)))',
+        }}
+      >
+        Freelance Web developer dan Penulis. Saya suka main game dan terkadang
+        membaca buku.
+      </Text>
+    </article>
   )
 }
 
@@ -85,19 +84,5 @@ const Project = () => {
         </Grid.Col>
       </Grid>
     </>
-  )
-}
-
-const Contact = () => {
-  return (
-    <div style={{ marginTop: '100px' }}>
-      <Text weight={500} style={{ fontSize: 30 }}>
-        Lets Build Something Together
-      </Text>
-      <Text>
-        feel free to reach out if you,re looking for a developer, have a
-        question, or just want to connect.
-      </Text>
-    </div>
   )
 }
