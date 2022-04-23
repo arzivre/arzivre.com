@@ -16,14 +16,13 @@ import { getPosts } from 'libs/posts'
 
 const useStyles = createStyles((theme) => ({
   title: {
-    fontFamily: `Greycliff CF`,
+    fontFamily: 'Greycliff CF',
     color: theme.colors.gray[3],
     lineHeight: 1,
   },
 
   hero: {
     fontSize: 100,
-    marginBottom: '20px',
 
     '&:hover': {
       color: theme.colorScheme === 'dark' ? '#f4569d' : theme.colors.indigo[0],
@@ -75,7 +74,7 @@ const Blog = ({ posts }: BlogIndexProps) => {
   return (
     <main style={{ background: '#100e17', padding: '20px 0' }}>
       <Container size={'sm'}>
-        <Title>
+        <Title mb={40}>
           <Text
             component='span'
             weight={600}
