@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { MantineProvider } from '@mantine/core'
+import NextNProgress from 'nextjs-progressbar'
 import Main from 'components/Main'
 
 export default function App(props: AppProps) {
@@ -26,6 +27,7 @@ export default function App(props: AppProps) {
           other: {},
         }}
       >
+        <NextNProgress />
         <Main>
           <Component {...pageProps} />
         </Main>
