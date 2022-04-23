@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import {
   createStyles,
   Text,
@@ -21,9 +21,10 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors.gray[7]} 0%, ${theme.colors.gray[9]} 100%)`,
     borderRadius: theme.radius.md,
     padding: theme.spacing.xl * 2.5,
-    margin: '100px ',
+    margin: '100px',
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       padding: theme.spacing.xl * 1.5,
+      margin: 'auto',
     },
   },
 
@@ -78,9 +79,48 @@ const useStyles = createStyles((theme) => ({
 
 const social = [BrandTwitter, BrandYoutube, BrandInstagram]
 export default function ContactUs() {
+  const [data, setData] = useState({
+    user_email: '',
+    user_name: '',
+    message: '',
+  })
+
   const { classes } = useStyles()
 
   const form = useRef()
+
+  const textareaStyle = { input: classes.input, label: classes.inputLabel }
+
+  const icons = social.map((Icon, index) => (
+    <ActionIcon
+      key={index}
+      size={28}
+      className={classes.social}
+      variant='transparent'
+    >
+      <Icon size={22} />
+    </ActionIcon>
+  ))
+  
+  const left = (
+    <div>
+      <Title className={classes.title}>
+        Let&apos;s Build Something Together
+      </Title>
+      <Text className={classes.description} mt='sm' mb={30}>
+        sonyfauzi@outlook.co.id
+      </Text>
+      <Text className={classes.description} mt='sm' mb={30}>
+        0813 3205 6357
+      </Text>
+      <Text className={classes.description} mt='sm' mb={30}>
+        akan menjawab dalam 24 jam.
+        <br />
+        Kediri, Jawa Timur.
+      </Text>
+      <Group mt='xl'>{icons}</Group>
+    </div>
+  )
 
   const sendEmail = (e: { preventDefault: () => void }) => {
     e.preventDefault()
@@ -102,17 +142,6 @@ export default function ContactUs() {
       )
   }
 
-  const icons = social.map((Icon, index) => (
-    <ActionIcon
-      key={index}
-      size={28}
-      className={classes.social}
-      variant='transparent'
-    >
-      <Icon size={22} />
-    </ActionIcon>
-  ))
-
   return (
     <div className={classes.wrapper}>
       <SimpleGrid
@@ -120,35 +149,25 @@ export default function ContactUs() {
         spacing={50}
         breakpoints={[{ maxWidth: 'sm', cols: 1 }]}
       >
-        <div>
-          <Title className={classes.title}>Contact Me</Title>
-          <Text className={classes.description} mt='sm' mb={30}>
-            arzivreart@gmail.com sonyfauzi@outlook.co.id
-          </Text>
-          <Text className={classes.description} mt='sm' mb={30}>
-            0813 3205 6357
-          </Text>
-          <Text className={classes.description} mt='sm' mb={30}>
-            akan menjawab dalam 24 jam.
-            <br />
-            Kediri, Jawa Timur.
-          </Text>
-          <Group mt='xl'>{icons}</Group>
-        </div>
+        {left}
         <form className={classes.form} ref={form} onSubmit={sendEmail}>
           <TextInput
             label='Email'
             placeholder='your@email.com'
             name='user_email'
             required
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            value={data.user_email}
+            onChange={(e) => setData({ ...data, user_email: e.target.value })}
+            classNames={textareaStyle}
           />
           <TextInput
             label='Name'
             placeholder='John Doe'
             name='user_name'
             mt='md'
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            value={data.user_name}
+            onChange={(e) => setData({ ...data, user_name: e.target.value })}
+            classNames={textareaStyle}
           />
           <Textarea
             required
@@ -157,7 +176,9 @@ export default function ContactUs() {
             name='message'
             minRows={4}
             mt='md'
-            classNames={{ input: classes.input, label: classes.inputLabel }}
+            value={data.message}
+            onChange={(e) => setData({ ...data, message: e.target.value })}
+            classNames={textareaStyle}
           />
 
           <Group position='right' mt='md'>

@@ -75,10 +75,20 @@ const Blog = ({ posts }: BlogIndexProps) => {
   return (
     <main style={{ background: '#100e17', padding: '20px 0' }}>
       <Container size={'sm'}>
-        <Title className={cx(classes.title, classes.hero)}>Blog</Title>
-        <Text color='#bebebe' mb={10}>
-          Share my thoughts and experiences.
-        </Text>
+        <Title>
+          <Text
+            component='span'
+            weight={600}
+            variant='gradient'
+            gradient={{ from: 'blue', to: 'green', deg: 45 }}
+            className={cx(classes.title, classes.hero)}
+          >
+            Blog
+          </Text>
+        </Title>
+        {/* <Text color='#bebebe' mb={10}>
+          Untuk menjaga ilmu pengetahuan abadi di internet
+        </Text> */}
         <Input
           icon={<Search size={16} />}
           placeholder='Blog apa yang ingin kamu baca ?'

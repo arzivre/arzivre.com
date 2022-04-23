@@ -8,7 +8,6 @@ const Home: NextPage = () => {
       <Container size={'xl'}>
         <Hero />
         <Project />
-        <Contact />
       </Container>
     </main>
   )
@@ -20,11 +19,21 @@ const Hero = () => {
   return (
     <>
       <Container size={'md'} style={{ padding: '100px' }}>
-        <Text weight={500} size='xl' style={{ color: '#0fb6d6' }}>
+        <Text
+          size='xl'
+          weight={600}
+          variant='gradient'
+          gradient={{ from: 'blue', to: 'teal', deg: 45 }}
+        >
           Saya Muhammad Sony Fauzi
         </Text>
 
-        <Text weight={600} style={{ fontSize: '4rem' }}>
+        <Text
+          style={{
+            fontSize:
+              'calc(25px + (70 - 25) * ((100vw - 300px) / (1600 - 300)))',
+          }}
+        >
           Freelance Web developer dan Penulis. Saya suka main game dan terkadang
           membaca buku.
         </Text>
@@ -36,21 +45,10 @@ const Hero = () => {
 const Project = () => {
   return (
     <>
-      <Divider
-        color={'dark'}
-        size='xl'
-        label={
-          <>
-            <Title order={2} style={{ fontSize: 40 }}>
-              Projects
-            </Title>
-          </>
-        }
-        labelPosition='center'
-        labelProps={{
-          component: 'h2',
-        }}
-      />
+      <Title order={2} style={{ fontSize: 40 }}>
+        Projects
+      </Title>
+
       <Grid columns={12}>
         <Grid.Col xs={12} sm={12} md={4}>
           <Text weight={500} size='xl'>

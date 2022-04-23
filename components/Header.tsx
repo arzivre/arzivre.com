@@ -10,6 +10,7 @@ import {
   Transition,
   Button,
   Title,
+  Text,
 } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
 
@@ -121,8 +122,8 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
               <Title
                 order={1}
                 style={{
-                  fontFamily: 'Babylonica',
-                  fontSize: '3rem',
+                  fontFamily: 'Varela Round',
+                  fontSize: '2.5rem',
                   fontWeight: '100',
                 }}
               >
@@ -148,7 +149,7 @@ export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
           >
             {(styles) => (
               <Paper className={classes.dropdown} withBorder style={styles}>
-                {items}
+                <Text size='xl'>{items}</Text>
               </Paper>
             )}
           </Transition>
