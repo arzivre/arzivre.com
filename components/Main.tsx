@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import Head from 'next/head'
-import { Container } from '@mantine/core'
+
+import { Loading } from './Loading'
 import { HeaderArzivre } from './Header'
 import { FooterArzivre } from './Footer'
 
@@ -16,15 +18,19 @@ const Main = ({ children }: MainProps) => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <HeaderArzivre
-        links={[
-          { link: '/blog', label: 'Blog' },
-          { link: '/project', label: 'Project' },
-          { link: '/contact', label: 'Contact' },
-        ]}
-      />
-        {children}
-      <FooterArzivre />
+      <Suspense fallback={<Loading />}>
+        <HeaderArzivre
+          links={[
+            { link: '/blog', label: 'Blog' },
+            { link: '/project', label: 'Project' },
+            { link: '/contact', label: 'Contact' },
+          ]}
+        />
+      </Suspense>
+      {children}
+      <Suspense fallback={<Loading />}>
+        <FooterArzivre />
+      </Suspense>
     </>
   )
 }
