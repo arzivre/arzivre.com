@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Anchor, Box, Button, Text, Title } from '@mantine/core'
+import { Anchor, Box, Button, Text, Title,Image } from '@mantine/core'
 import { Code } from './Code'
 
 const title = {
@@ -53,6 +53,7 @@ const MDXComponents = {
     <Text component='p' mt={4} {...props} style={{ color: '#bebebe' }} />
   ),
   a: CustomLink,
+  img:Image,
   code: (props: any) => <Code {...props} />,
   ul: (props: MDXProps) => (
     <Box component='ul' pt={2} pl={4} ml={2} {...props} />
