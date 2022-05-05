@@ -10,6 +10,7 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head>
+          <meta name="google-site-verification" content="NNclv3S6PJeXK0BGpcNEtxwDodjEIP7mzUJy4ok-UAo" />
           <link
             href='https://fonts.googleapis.com/css2?family=Babylonica&family=Varela+Round&display=swap'
             rel='stylesheet'
