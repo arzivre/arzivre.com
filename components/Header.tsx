@@ -1,157 +1,102 @@
-import { useState } from 'react'
-import NextLink from 'next/link'
-import {
-  createStyles,
-  Header,
-  Container,
-  Group,
-  Burger,
-  Paper,
-  Transition,
-  Button,
-  Title,
-  Text,
-} from '@mantine/core'
-import { useBooleanToggle } from '@mantine/hooks'
+import Link from 'next/link'
+import { Popover, Transition } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment } from 'react'
 
-const HEADER_HEIGHT = 60
-
-const useStyles = createStyles((theme) => ({
-  header: {
-    background: '#191621',
-    border: 'none',
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
-  },
-
-  inner: {
-    height: HEADER_HEIGHT,
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-
-  links: {
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
-    },
-  },
-
-  link: {
-    background: 'transparent',
-    display: 'block',
-    lineHeight: 1,
-    padding: '8px 12px',
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color:
-      theme.colorScheme === 'dark'
-        ? theme.colors.gray[0]
-        : theme.colors.gray[9],
-    fontSize: theme.fontSizes.md,
-    fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.dark[0]
-          : theme.colors.gray[9],
-      color:
-        theme.colorScheme === 'dark'
-          ? theme.colors.gray[9]
-          : theme.colors.gray[0],
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  dropdown: {
-    position: 'absolute',
-    top: HEADER_HEIGHT,
-    left: 0,
-    right: 0,
-    zIndex: 0,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-    borderTopWidth: 0,
-    overflow: 'hidden',
-
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-}))
-
-interface HeaderResponsiveProps {
-  links: { link: string; label: string }[]
-}
-
-export const HeaderArzivre = ({ links }: HeaderResponsiveProps) => {
-  const [opened, toggleOpened] = useBooleanToggle(false)
-  const [active, setActive] = useState(links[0].link)
-  const { classes, cx } = useStyles()
-
-  const items = links.map((link) => (
-    <NextLink key={link.label} href={link.link} passHref>
-      <Button
-        component='a'
-        className={classes.link}
-        onClick={() => {
-          setActive(link.link)
-          toggleOpened(false)
-        }}
-      >
-        {link.label}
-      </Button>
-    </NextLink>
-  ))
-
+const Header = () => {
   return (
-    <main style={{ background: 'transparent' }}>
-      <Header height={HEADER_HEIGHT} className={classes.header}>
-        <Container size={'xl'} className={classes.inner}>
-          <NextLink href={'/'} as={'/'} passHref>
-            <Button component='a' style={{ background: 'none' }}>
-              <Title
-                order={1}
-                style={{
-                  fontFamily: 'Varela Round',
-                  fontSize: '2.5rem',
-                  fontWeight: '100',
-                }}
-              >
-                Arzivre
-              </Title>
-            </Button>
-          </NextLink>
-          <Group spacing={5} className={classes.links}>
-            {items}
-          </Group>
+    <Popover className='relative container w-full max-w-8xl mx-auto px-4'>
+      <div
+        className='h-14 flex justify-between md:justify-start items-center 
+           md:space-x-10'
+      >
+        <div className='flex justify-start lg:w-0 lg:flex-1'>
+          <Link href='/'>
+            <a>
+              <h1 className='font-semibold text-xl text-gray-900'>
+               Arzivre
+              </h1>
+            </a>
+          </Link>
+        </div>
+        <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
+          <Link href='/'>
+            <a
+              className='border-b-4 border-slate-600 text-gray-900
+              whitespace-nowrap text-base font-medium hover:border-gray-300'
+            >
+              Home
+            </a>
+          </Link>
+          <Link href='/blogs'>
+            <a
+              className='ml-8 whitespace-nowrap 
+              text-base font-medium text-gray-400 hover:text-gray-900'
+            >
+              Blogs
+            </a>
+          </Link>
+        </div>
+        <div className='-mr-2 -my-2 md:hidden'>
+          <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+            <span className='sr-only'>Open menu</span>
+            <MenuIcon className='h-6 w-6' aria-hidden='true' />
+          </Popover.Button>
+        </div>
+      </div>
 
-          <Burger
-            opened={opened}
-            onClick={() => toggleOpened()}
-            className={classes.burger}
-            size='sm'
-          />
-
-          <Transition
-            transition='pop-top-right'
-            duration={200}
-            mounted={opened}
-          >
-            {(styles) => (
-              <Paper className={classes.dropdown} withBorder style={styles}>
-                <Text size='xl'>{items}</Text>
-              </Paper>
-            )}
-          </Transition>
-        </Container>
-      </Header>
-    </main>
+      {mobile}
+    </Popover>
   )
 }
+
+export default Header
+
+const mobile = (
+  <Transition
+    as={Fragment}
+    enter='duration-200 ease-out'
+    enterFrom='opacity-0 scale-95'
+    enterTo='opacity-100 scale-100'
+    leave='duration-100 ease-in'
+    leaveFrom='opacity-100 scale-100'
+    leaveTo='opacity-0 scale-95'
+  >
+    <Popover.Panel
+      focus
+      className='absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'
+    >
+      <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50'>
+        <div className='pt-5 pb-6 px-5'>
+          <div className='flex items-center justify-between'>
+            <div className='-mr-2'>
+              <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                <span className='sr-only'>Tutup menu</span>
+                <XIcon className='h-6 w-6' aria-hidden='true' />
+              </Popover.Button>
+            </div>
+          </div>
+        </div>
+        <div className='py-6 px-5 space-y-6'>
+          <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
+            <Link href='/'>
+              <a className='text-base font-medium text-gray-900 hover:text-gray-700'>
+                Home
+              </a>
+            </Link>
+            <Link href='/blogs'>
+              <a className='text-base font-medium text-gray-900 hover:text-gray-700'>
+                Blog
+              </a>
+            </Link>
+            {/* <Link href='/contact'>
+              <a className='text-base font-medium text-gray-900 hover:text-gray-700'>
+                Contact us
+              </a>
+            </Link> */}
+          </div>
+        </div>
+      </div>
+    </Popover.Panel>
+  </Transition>
+)

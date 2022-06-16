@@ -1,88 +1,83 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { Center, Container, Divider, Grid, Text, Title } from '@mantine/core'
+import Layout from 'components/Layout'
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
-    <main style={{ background: '#100e17' }}>
-      <Container size={'xl'}>
-        <Hero />
-        <Project />
-      </Container>
-    </main>
+    <Layout>
+      <Head>
+        <meta name="description" content="Muhammad Sony Fauzi Freelance Web developer, Penulis, Gamer" />
+        <meta name="keywords" content="web, developer, freelance" />
+        <title>Arzivre</title>
+      </Head>
+        {Hero}
+        {Project}
+    </Layout>
   )
 }
 
 export default Home
 
-const Hero = () => {
-  return (
-    <article
-      style={{ margin: '0 auto', paddingTop: '200px', paddingBottom: '200px' }}
-    >
-      <Text
-        size='xl'
-        weight={600}
-        variant='gradient'
-        gradient={{ from: 'blue', to: 'teal', deg: 45 }}
-      >
-        Saya Muhammad Sony Fauzi
-      </Text>
+const Hero = (
+  <article className='container mx-auto px-4 min-h-[90vh] mt-10 lg:flex gap-8'>
+    <div className=''>
+      <Image
+        src='/images/profile.jpg'
+        alt='Potrait'
+        width={2733}
+        height={2734}
+        placeholder='blur'
+        blurDataURL='/images/profile.jpg'
+      />
+    </div>
+    <header className=''>
+      <h1 className='text-[calc(1em+8vh)] font-bold'>Muhammad Sony Fauzi</h1>
+      <h2 className='text-[calc(1em+8vh)] font-thin'>Web Developer</h2>
+    </header>
+    <footer className='text-right lg:text-left'>
+      <h3 className='text-2xl mb-1'>SOSIAL MEDIA</h3>
+      <p className='text-slate-600'>Github</p>
+      <h3 className='text-2xl mb-1 mt-3'>CONTACT</h3>
+      <p className='text-slate-600'>sonyfauzi@outlook.co.id</p>
+      <p className='text-slate-600'>0813 3205 6357</p>
+    </footer>
+  </article>
+)
 
-      <Text
-        style={{
-          fontSize: 'calc(25px + (70 - 25) * ((100vw - 300px) / (1600 - 300)))',
-        }}
-      >
-        Freelance Web developer dan Penulis. Saya suka main game dan terkadang
-        membaca buku.
-      </Text>
-    </article>
-  )
-}
+const Project = (
+  <article className='container mx-auto px-4 min-h-screen my-10'>
+    <h1 className='relative right-[25vw] text-5xl mb-5 text-right'>Project </h1>
 
-const Project = () => {
-  return (
-    <>
-      <Title order={2} style={{ fontSize: 40 }}>
-        Projects
-      </Title>
-
-      <Grid columns={12}>
-        <Grid.Col xs={12} sm={12} md={4}>
-          <Text weight={500} size='xl'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas a
-          </Text>
-        </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={4}>
-          Powered by a Craft CMS back-end the website is easy to manage and
-          update. There are several customizable content blocks that can be
-          added and rearranged to make case studies be presented in a meaningful
-          way.
-        </Grid.Col>
-        <Grid.Col xs={12} sm={12} md={4}>
-          <Text size='lg' weight={500}>
-            www.website.com
-          </Text>
-        </Grid.Col>
-      </Grid>
-      <Grid columns={12} grow>
-        <Grid.Col span={8} sm={12} md={8}>
-          <Image
-            src='/images/Capture.JPG'
-            alt='project image'
-            width='100%'
-            height='50%'
-            layout='responsive'
-            objectFit='contain'
-          />
-        </Grid.Col>
-
-        <Grid.Col sm={12} md={4}>
-          Case Studies A primary focus of the website is to showcase the brand
-          design work that Studio Mega has delivered to their clients
-        </Grid.Col>
-      </Grid>
-    </>
-  )
-}
+    <main className='grid grid-cols-1  md:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1  lg:grid-cols-2 gap-2 mr-4'>
+        <div className='mb-5'>
+          <h2 className='text-4xl mb-2'>Kopi Lokal</h2>
+          <p>
+            Web ini adalaah project sampingan saya untuk menulis lokasi warung
+            kopi dan artikel tentang Kopi
+          </p>
+        </div>
+        <div className='mb-5'>
+          <h2 className='text-2xl mb-1'>URL</h2>
+          <a href='https://kopilokal.com' className='hover:text-blue-600'>
+            <p>kopilokal.com</p>
+          </a>
+          <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
+          <p>Nextjs</p>
+          <p>Supabase</p>
+        </div>
+      </div>
+      <div className='text-[0px]'>
+        <Image
+          src='/images/kopi-lokal.png'
+          alt='Project Kopi Lokal'
+          width={1235}
+          height={585}
+          placeholder='blur'
+          blurDataURL='/images/kopi-lokal.png'
+        />
+      </div>
+    </main>
+  </article>
+)

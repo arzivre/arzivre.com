@@ -8,15 +8,11 @@ export default class _Document extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='id'>
         <Head>
           <meta name="google-site-verification" content="NNclv3S6PJeXK0BGpcNEtxwDodjEIP7mzUJy4ok-UAo" />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Babylonica&family=Varela+Round&display=swap'
-            rel='stylesheet'
-          />
         </Head>
-        <body>
+        <body className='bg-gray-50'>
           <Main />
           <NextScript />
         </body>

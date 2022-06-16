@@ -8,6 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import MDXComponents from 'components/MDXComponents'
 import { getPost, getSlugs } from 'libs/posts'
+import Layout from 'components/Layout'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await getSlugs()
@@ -42,9 +43,9 @@ const classes = {
 
 const Post = ({ post }: any) => {
   return (
-    <>
+    <Layout>
       <Head>
-        <title>{post.title} - Arzivre</title>
+        <title>{post.title}</title>
       </Head>
       <main style={classes.main}>
         <Container size={'sm'}>
@@ -56,7 +57,7 @@ const Post = ({ post }: any) => {
           <MDXRemote {...post.body} components={MDXComponents} />
         </Container>
       </main>
-    </>
+    </Layout>
   )
 }
 
