@@ -13,9 +13,7 @@ const Header = () => {
         <div className='flex justify-start lg:w-0 lg:flex-1'>
           <Link href='/'>
             <a>
-              <h1 className='font-semibold text-xl text-gray-900'>
-               Arzivre
-              </h1>
+              <h1 className='font-semibold text-xl text-gray-900'>Arzivre</h1>
             </a>
           </Link>
         </div>
@@ -34,6 +32,14 @@ const Header = () => {
               text-base font-medium text-gray-400 hover:text-gray-900'
             >
               Blogs
+            </a>
+          </Link>
+          <Link href='/contact'>
+            <a
+              className='ml-8 whitespace-nowrap 
+              text-base font-medium text-gray-400 hover:text-gray-900'
+            >
+              Contact
             </a>
           </Link>
         </div>
@@ -89,11 +95,12 @@ const mobile = (
                 Blog
               </a>
             </Link>
-            {/* <Link href='/contact'>
+            <Link href='/contact'>
               <a className='text-base font-medium text-gray-900 hover:text-gray-700'>
-                Contact us
+                Contact
               </a>
-            </Link> */}
+            </Link>
+         
           </div>
         </div>
       </div>

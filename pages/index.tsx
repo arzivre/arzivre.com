@@ -1,18 +1,22 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Layout from 'components/Layout'
-import Head from 'next/head';
+import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <meta name="description" content="Muhammad Sony Fauzi Freelance Web developer, Penulis, Gamer" />
-        <meta name="keywords" content="web, developer, freelance" />
+        <meta
+          name='description'
+          content='Muhammad Sony Fauzi Freelance Web developer, Penulis, Gamer'
+        />
+        <meta name='keywords' content='web, developer, freelance' />
         <title>Arzivre</title>
       </Head>
-        {Hero}
-        {Project}
+      {Hero}
+      {Project1}
+      {Project2}
     </Layout>
   )
 }
@@ -21,7 +25,7 @@ export default Home
 
 const Hero = (
   <article className='container mx-auto px-4 min-h-[90vh] mt-10 lg:flex gap-8'>
-    <div className=''>
+    <div>
       <Image
         src='/images/profile.jpg'
         alt='Potrait'
@@ -45,30 +49,18 @@ const Hero = (
   </article>
 )
 
-const Project = (
+const Project1 = (
   <article className='container mx-auto px-4 min-h-screen my-10'>
-    <h1 className='relative right-[25vw] text-5xl mb-5 text-right'>Project </h1>
-
-    <main className='grid grid-cols-1  md:grid-cols-2 gap-4'>
-      <div className='grid grid-cols-1  lg:grid-cols-2 gap-2 mr-4'>
-        <div className='mb-5'>
-          <h2 className='text-4xl mb-2'>Kopi Lokal</h2>
-          <p>
-            Web ini adalaah project sampingan saya untuk menulis lokasi warung
-            kopi dan artikel tentang Kopi
-          </p>
-        </div>
-        <div className='mb-5'>
-          <h2 className='text-2xl mb-1'>URL</h2>
-          <a href='https://kopilokal.com' className='hover:text-blue-600'>
-            <p>kopilokal.com</p>
-          </a>
-          <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
-          <p>Nextjs</p>
-          <p>Supabase</p>
-        </div>
-      </div>
-      <div className='text-[0px]'>
+    <h1 className='relative right-[8vw] text-5xl mb-5 text-right'>Projects </h1>
+    <section className='grid md:grid-cols-2 lg:grid-cols-3'>
+      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Kopi Lokal</h2>
+      <p className='mb-4 md:mb-10'>
+        Web ini adalaah project sampingan saya untuk menulis lokasi warung kopi
+        dan artikel tentang Kopi
+      </p>
+    </section>
+    <section className='md:flex gap-4'>
+      <div className='text-[0px] border-4 border-gray-900'>
         <Image
           src='/images/kopi-lokal.png'
           alt='Project Kopi Lokal'
@@ -78,6 +70,49 @@ const Project = (
           blurDataURL='/images/kopi-lokal.png'
         />
       </div>
-    </main>
+      <div className='w-80'>
+        <div className='mb-5'>
+          <h2 className='text-2xl mb-1'>URL</h2>
+          <a href='https://kopilokal.com' className='hover:text-blue-600'>
+            <p>kopilokal.com</p>
+          </a>
+          <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
+          <p>Nextjs</p>
+          <p>Supabase</p>
+          <p>MDX</p>
+        </div>
+      </div>
+    </section>
+  </article>
+)
+const Project2 = (
+  <article className='container mx-auto px-4 min-h-screen my-10'>
+    <section className='grid md:grid-cols-2 lg:grid-cols-3'>
+      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>House of Jesho</h2>
+      <p className='mb-4 md:mb-10'>Web ecommerce dan blog</p>
+    </section>
+    <section className='md:flex gap-4'>
+      <div className='text-[0px] border-4 border-gray-900'>
+        <Image
+          src='/images/house-of-jesho.png'
+          alt='Project Kopi Lokal'
+          width={1235}
+          height={585}
+          placeholder='blur'
+          blurDataURL='/images/house-of-jesho.png'
+        />
+      </div>
+      <div className='w-80'>
+        <div className='mb-5'>
+          <h2 className='text-2xl mb-1'>URL</h2>
+          <a href='https://houseofjesho.com' className='hover:text-blue-600'>
+            <p>houseofjesho.com</p>
+          </a>
+          <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
+          <p>Nextjs</p>
+          <p>Firebase</p>
+        </div>
+      </div>
+    </section>
   </article>
 )

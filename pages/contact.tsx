@@ -13,6 +13,7 @@ import {
 } from '@mantine/core'
 import emailjs from '@emailjs/browser'
 import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react'
+import Layout from 'components/Layout'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -143,6 +144,7 @@ export default function ContactUs() {
   }
 
   return (
+    <Layout>
     <div className={classes.wrapper}>
       <SimpleGrid
         cols={2}
@@ -189,5 +191,6 @@ export default function ContactUs() {
         </form>
       </SimpleGrid>
     </div>
+    </Layout>
   )
 }
