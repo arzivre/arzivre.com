@@ -36,22 +36,41 @@ const Hero = (
       />
     </div>
     <header className=''>
-      <h1 className='text-[calc(1em+8vh)] font-bold'>Muhammad Sony Fauzi</h1>
-      <h2 className='text-[calc(1em+8vh)] font-thin'>Web Developer</h2>
+      <h1 className='text-[calc(1em+6vh)] font-bold  mb-4'>
+        Muhammad Sony Fauzi
+      </h1>
+      <h2 className='text-[calc(1em+5vh)] font-thin'>Web Developer,</h2>
+      <h2 className='text-[calc(1em+5vh)] font-thin'>Penulis</h2>
     </header>
-    <footer className='text-right lg:text-left'>
-      <h3 className='text-2xl mb-1'>SOSIAL MEDIA</h3>
-      <p className='text-slate-600'>Github</p>
-      <h3 className='text-2xl mb-1 mt-3'>CONTACT</h3>
-      <p className='text-slate-600'>sonyfauzi@outlook.co.id</p>
-      <p className='text-slate-600'>0813 3205 6357</p>
+    <footer className='whitespace-nowrap px-4 text-right lg:text-left'>
+      <h3 className='text-2xl mb-1'>Sosial Media</h3>
+      <p>
+        <a
+          href='https://twitter.com/arzivre'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Twitter
+        </a>
+      </p>
+      <p>
+        <a
+          href='https://github.com/arzivre'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Github
+        </a>
+      </p>
     </footer>
   </article>
 )
 
 const Project1 = (
-  <article className='container mx-auto px-4 min-h-screen my-10'>
-    <h1 className='relative right-[8vw] text-5xl mb-5 text-right'>Projects </h1>
+  <article className='container mx-auto px-4 min-h-screen my-20'>
+    <h1 className='relative right-[8vw] text-[calc(1em+10vh)] mb-5 text-right'>
+      Projects{' '}
+    </h1>
     <section className='grid md:grid-cols-2 lg:grid-cols-3'>
       <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Kopi Lokal</h2>
       <p className='mb-4 md:mb-10'>
@@ -73,7 +92,12 @@ const Project1 = (
       <div className='w-80'>
         <div className='mb-5'>
           <h2 className='text-2xl mb-1'>URL</h2>
-          <a href='https://kopilokal.com' className='hover:text-blue-600'>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://kopilokal.com'
+            className='hover:text-blue-600'
+          >
             <p>kopilokal.com</p>
           </a>
           <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
@@ -105,7 +129,12 @@ const Project2 = (
       <div className='w-80'>
         <div className='mb-5'>
           <h2 className='text-2xl mb-1'>URL</h2>
-          <a href='https://houseofjesho.com' className='hover:text-blue-600'>
+          <a
+            href='https://houseofjesho.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-blue-600'
+          >
             <p>houseofjesho.com</p>
           </a>
           <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
