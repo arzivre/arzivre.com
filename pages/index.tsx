@@ -67,14 +67,10 @@ const Hero = (
 )
 
 const Project1 = (
-  <article className='container mx-auto px-4 min-h-screen my-20'>
-    <h1 className='text-[calc(1em+10vh)] mb-5'>
-      Projects{' '}
-    </h1>
-    <section className='grid md:grid-cols-2 lg:grid-cols-3 gap-40'>
-      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>
-        Kopi Lokal
-      </h2>
+  <section className='container mx-auto px-4 min-h-screen my-20'>
+    <h1 className='text-[calc(1em+10vh)] mb-5'>Projects </h1>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-40'>
+      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Kopi Lokal</h2>
       <p className='mb-4 md:mb-10'>
         Kopi Lokal adalah project sampingan saya untuk menulis lokasi warung
         kopi dan artikel tentang Kopi
@@ -82,8 +78,8 @@ const Project1 = (
       <p className='mb-4 md:mb-10'>
         Web ini menggukan teknologi Supabase untuk menyimpan data dan file
       </p>
-    </section>
-    <section className='md:flex gap-4'>
+    </div>
+    <div className='md:flex gap-4'>
       <div className='text-[0px] border-4 border-gray-900'>
         <Image
           src='/images/kopi-lokal.png'
@@ -111,21 +107,19 @@ const Project1 = (
           <p>MDX</p>
         </div>
       </div>
-    </section>
-  </article>
+    </div>
+  </section>
 )
 const Project2 = (
-  <article className='container mx-auto px-4 min-h-screen my-10'>
-    <section className='grid md:grid-cols-2 lg:grid-cols-3'>
-      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>
-        Houseofjesho 
-      </h2>
+  <section className='container mx-auto px-4 min-h-screen my-10'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+      <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Houseofjesho</h2>
       <p className='mb-4 md:mb-10'>
         Houseofjesho adalah perusahaan mebel yang berbasis di Semarang,
         Indonesia.
       </p>
-    </section>
-    <section className='md:flex gap-4'>
+    </div>
+    <div className='md:flex gap-4'>
       <div className='text-[0px] border-4 border-gray-900'>
         <Image
           src='/images/house-of-jesho.png'
@@ -152,6 +146,6 @@ const Project2 = (
           <p>Firebase</p>
         </div>
       </div>
-    </section>
-  </article>
+    </div>
+  </section>
 )

@@ -1,13 +1,6 @@
 import NextLink from 'next/link'
-import { Anchor, Box, Button, Text, Title,Image } from '@mantine/core'
+import { Image } from '@mantine/core'
 import { Code } from './Code'
-
-const title = {
-  color: '#DEE2E6',
-  fontFamily: 'Greycliff CF',
-  lineHeight: 1,
-  paddingBottom: '20px',
-}
 
 const CustomLink = (props: any) => {
   const href = props.href
@@ -16,8 +9,7 @@ const CustomLink = (props: any) => {
   if (isInternalLink) {
     return (
       <NextLink href={href} passHref>
-        <Button
-          component='a'
+        <button
           {...props}
           style={{
             background: 'none',
@@ -34,34 +26,17 @@ const CustomLink = (props: any) => {
           }}
         >
           {props.children}
-        </Button>
+        </button>
       </NextLink>
     )
   }
 
-  return <Anchor target='_blank' rel='noopener noreferrer' {...props} />
-}
-interface MDXProps {
-  props: string
+  return <a target='_blank' rel='noopener noreferrer' {...props} />
 }
 
 const MDXComponents = {
-  h1: (props: MDXProps) => <Title order={1} {...props} style={title} />,
-  h2: (props: MDXProps) => <Title order={2} {...props} style={title} />,
-  h3: (props: MDXProps) => <Title order={3} {...props} style={title} />,
-  p: (props: MDXProps) => (
-    <Text component='p' mt={4} {...props} style={{ color: '#bebebe' }} />
-  ),
   a: CustomLink,
-  img:Image,
-  code: (props: any) => <Code {...props} />,
-  ul: (props: MDXProps) => (
-    <Box component='ul' pt={2} pl={4} ml={2} {...props} />
-  ),
-  ol: (props: MDXProps) => (
-    <Box component='ol' pt={2} pl={4} ml={2} {...props} />
-  ),
-  li: (props: MDXProps) => <Box component='li' pb={1} {...props} />,
-  br: (props: MDXProps) => <Box style={{ height: '24px' }} {...props} />,
+  img: Image,
 }
+
 export default MDXComponents

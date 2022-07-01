@@ -1,18 +1,7 @@
 //@ts-nocheck
 import { useRef, useState } from 'react'
-import {
-  createStyles,
-  Text,
-  Title,
-  SimpleGrid,
-  TextInput,
-  Textarea,
-  Button,
-  Group,
-  ActionIcon,
-} from '@mantine/core'
+import { createStyles, TextInput, Textarea, Button, Group } from '@mantine/core'
 import emailjs from '@emailjs/browser'
-import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react'
 import Layout from 'components/Layout'
 
 const useStyles = createStyles((theme) => ({
@@ -78,7 +67,6 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-const social = [BrandTwitter, BrandYoutube, BrandInstagram]
 export default function ContactUs() {
   const [data, setData] = useState({
     user_email: '',
@@ -92,35 +80,20 @@ export default function ContactUs() {
 
   const textareaStyle = { input: classes.input, label: classes.inputLabel }
 
-  const icons = social.map((Icon, index) => (
-    <ActionIcon
-      key={index}
-      size={28}
-      className={classes.social}
-      variant='transparent'
-    >
-      <Icon size={22} />
-    </ActionIcon>
-  ))
-  
   const left = (
-    <div>
-      <Title className={classes.title}>
-        Let&apos;s Build Something Together
-      </Title>
-      <Text className={classes.description} mt='sm' mb={30}>
+    <section>
+      <h1 className=''>Let&apos;s Build Something Together</h1>
+      <p className='' mt='sm' mb={30}>
         sonyfauzi@outlook.co.id
-      </Text>
-      <Text className={classes.description} mt='sm' mb={30}>
+      </p>
+      <p className='' mt='sm' mb={30}>
         0813 3205 6357
-      </Text>
-      <Text className={classes.description} mt='sm' mb={30}>
+      </p>
+      <p className='' mt='sm' mb={30}>
         akan menjawab dalam 24 jam.
-        <br />
-        Kediri, Jawa Timur.
-      </Text>
-      <Group mt='xl'>{icons}</Group>
-    </div>
+      </p>
+      <p>Kediri, Jawa Timur.</p>
+    </section>
   )
 
   const sendEmail = (e: { preventDefault: () => void }) => {
@@ -145,12 +118,7 @@ export default function ContactUs() {
 
   return (
     <Layout>
-    <div className={classes.wrapper}>
-      <SimpleGrid
-        cols={2}
-        spacing={50}
-        breakpoints={[{ maxWidth: 'sm', cols: 1 }]}
-      >
+      <main className='container mx-auto px-4 grid grid-cols-2 my-20'>
         {left}
         <form className={classes.form} ref={form} onSubmit={sendEmail}>
           <TextInput
@@ -183,14 +151,15 @@ export default function ContactUs() {
             classNames={textareaStyle}
           />
 
-          <Group position='right' mt='md'>
-            <Button className={classes.control} type='submit' value='Send'>
-              Send message
-            </Button>
-          </Group>
+          <button
+            className='px-4 py-2 m-4 bg-blue-400 '
+            type='submit'
+            value='Send'
+          >
+            Kirim Pesan
+          </button>
         </form>
-      </SimpleGrid>
-    </div>
+      </main>
     </Layout>
   )
 }

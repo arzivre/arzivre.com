@@ -1,13 +1,9 @@
-// import { Suspense } from 'react'
-// import Head from 'next/head'
-
-// import { Loading } from './Loading'
 import Header from './Header'
 
-interface MainProps {
+type LayoutProps = {
   children: React.ReactNode
 }
-const Layout = ({ children }: MainProps) => {
+const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />

@@ -12,7 +12,7 @@ export default class _Document extends Document {
         <Head>
           <meta name="google-site-verification" content="NNclv3S6PJeXK0BGpcNEtxwDodjEIP7mzUJy4ok-UAo" />
         </Head>
-        <body className='bg-gray-50'>
+        <body>
           <Main />
           <NextScript />
         </body>
