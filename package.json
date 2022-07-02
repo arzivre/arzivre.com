@@ -15,22 +15,14 @@
     "@emailjs/browser": "^3.6.2",
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
-    "@mantine/core": "^4.2.11",
-    "@mantine/form": "^4.2.11",
-    "@mantine/hooks": "^4.2.11",
-    "@mantine/next": "^4.2.11",
     "globby": "^13.1.2",
     "gray-matter": "^4.0.3",
     "next": "^12.2.0",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^4.0.2",
-    "nextjs-progressbar": "^0.0.14",
     "prism-react-renderer": "^1.3.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-slug": "^5.0.1",
-    "tabler-icons-react": "^1.52.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.2.0",

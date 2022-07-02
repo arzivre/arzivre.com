@@ -28,7 +28,9 @@ export async function getPosts() {
 export async function getSlugs() {
   const suffix = '.mdx'
   const files = await readdir('contents/posts')
-  return files
+  const slugs = files
     .filter((file) => file.endsWith(suffix))
     .map((file) => file.slice(0, -suffix.length))
+
+  return slugs
 }

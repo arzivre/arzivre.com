@@ -1,6 +1,4 @@
 import NextLink from 'next/link'
-import { Image } from '@mantine/core'
-import { Code } from './Code'
 
 const CustomLink = (props: any) => {
   const href = props.href
@@ -36,7 +34,6 @@ const CustomLink = (props: any) => {
 
 const MDXComponents = {
   a: CustomLink,
-  img: Image,
 }
 
 export default MDXComponents
