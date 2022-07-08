@@ -9,7 +9,7 @@ type formData = {
 }
 
 const leftSection = (
-  <section>
+  <section className=''>
     <h1 className='text-[calc(1em+5vh)] mb-8'>
       Let&apos;s Build Something Together
     </h1>
@@ -53,12 +53,16 @@ export default function ContactUs() {
 
   return (
     <Layout>
-      <main className='container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 space-y-8 my-20'>
+      <main
+        className='container mx-auto my-10 p-8 grid grid-cols-1 md:grid-cols-2 space-y-8 rounded-md
+        bg-gradient-to-r from-yellow-400 to-pink-600'
+      >
         {leftSection}
         <form
           ref={formRef as any}
           onSubmit={sendEmail}
-          className='p-10 bg-blue-600/10 rounded-md'
+          className='p-10 bg-purple-600 rounded-md
+          border-2 border-yellow-400'
         >
           {!submit ? (
             <>
