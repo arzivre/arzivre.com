@@ -158,10 +158,4 @@ const Home: NextPage = () => {
   )
 }
 
-
-export const config = {
-  unstable_runtimeJS: false,
-  runtime: 'experimental-edge',
-}
-
 export default Home
