@@ -8,6 +8,9 @@ module.exports = withPlugins([
   // your other plugins here
   [withBundleAnalyzer],
   {
+    experimental: {
+      runtime: 'experimental-edge',
+    },
     reactStrictMode: true,
     swcMinify: true,
     eslint: {
