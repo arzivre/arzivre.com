@@ -1,12 +1,12 @@
 ---
-slug: 'react-typescript-snippet'
+slug: 'nextjs-vscode-debug'
 title: 'Debug nextjs dengan vscode'
 date: '2022-04-23T03:04:05.678Z'
-excerpt: 'Cara debug mextjs dengan vscode'
+summary: 'Tutorial debug nextjs di VS code'
 image: ''
 ---
 
-## configure Next.js to start in debug mode
+## konfigurasikan Next.js untuk mulai debug mode
 
 ```json
  "scripts": {
@@ -15,7 +15,7 @@ image: ''
   }
 ```
 
-Untuk Windows perlu install cross-env
+Untuk Sistem Operasi Windows perlu install cross-env
 
 ```json
  "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
@@ -23,7 +23,7 @@ Untuk Windows perlu install cross-env
 
 ## Configure VS Code so that it connects to your already started Next.js application. 
 
-Create .vscode/launch.json at the root of your project:
+Buat file .vscode/launch.json at the root project anda:
 
 ```json
 {

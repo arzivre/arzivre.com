@@ -19,9 +19,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({
   params: { slug },
 }: any) => {
-  const { content, date, title, excerpt, image } = await getPost(slug)
+  const { content, date, title, summary, image } = await getPost(slug)
   const body = await serialize(content)
-  return { props: { post: { body, date, title, excerpt, image, slug } } }
+  return { props: { post: { body, date, title, summary, image, slug } } }
 }
 
 const Post = ({ post }: any) => {
@@ -30,7 +30,7 @@ const Post = ({ post }: any) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <main className='container mx-auto max-w-4xl my-10 prose'>
+      <main className='container mx-auto max-w-4xl my-10 px-4 prose'>
         <p className='text-slate-600'>{post.date.slice(0, 10)}</p>
         <h1 className='font-serif text-[calc(1em+10vh)]'>{post.title}</h1>
           <MDXRemote {...post.body} components={MDXComponents} />

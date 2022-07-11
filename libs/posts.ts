@@ -4,18 +4,18 @@ import matter from 'gray-matter'
 export async function getPost(slug: string) {
   const source = await readFile(`contents/posts/${slug}.mdx`, 'utf8')
   const {
-    data: { date, title, excerpt, image },
+    data: { date, title, summary, image },
     content,
   } = matter(source)
-  return { date, title, excerpt, image, content }
+  return { date, title, summary, image, content }
 }
 
 export async function getPosts() {
   const slugs = await getSlugs()
   const posts = []
   for (const slug of slugs) {
-    const { date, title, excerpt } = await getPost(slug)
-    const post = { title, date, excerpt }
+    const { date, title, summary } = await getPost(slug)
+    const post = { title, date, summary }
     posts.push({ slug, ...post })
   }
   posts.sort(function (a, b) {

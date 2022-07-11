@@ -2,7 +2,7 @@
 slug: 'react-18'
 title: 'Aku ingin memahami React 18'
 date: '2022-04-12T03:04:05.678Z'
-excerpt: 'React 18 sudah rilis dan banyak hal yang terjadi supaya Concurrent fitur dapat terjadi'
+summary: 'React 18 sudah rilis dan banyak hal yang terjadi supaya Concurrent fitur dapat terjadi'
 image: ''
 ---
 
@@ -45,7 +45,7 @@ Pada React 17 react, react render secara synchronous. synchronous rendering adal
 
 ![tes](/images/post/react18-concurrent.png)
 
-Di React 18 render terjadi secara Concunrrent. React dapat melihat jika ada update dan mulai menyiapkan update itu di render phase , menghitung jsx tree baru, diff, dan kemudian hal lain terjadi dan menentukan untuk malakukan update ke dom, jadi render dapat digangu.
+Di React 18 render terjadi secara Concurrent. React dapat melihat jika ada update dan mulai menyiapkan update itu di render phase , menghitung jsx tree baru, diff, dan kemudian hal lain terjadi dan menentukan untuk malakukan update ke dom, jadi render dapat digangu.
 
 Dengan cara seperti ini React dapat lebih pintar dalam memecah semua pekerjaan yang perlu di lakukan. Contohnya ketika merima input dari form kita perlu merender (render phase -> commit phase dikerjakan) terkadang render phase membutuhkan banyak kerja untuk menyelesaikan kalkulasi jsx tree baru bahkan terkadang sampai mengunci browser.
 react memisah pekerjaan dan mengerjakan prioritas update merender versi berbeda secara ber samaan disaat yang sama tanpa perlu melakunnya di browser

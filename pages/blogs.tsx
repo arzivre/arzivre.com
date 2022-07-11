@@ -17,7 +17,7 @@ interface PostProps {
   date: Key | number
   slug: string
   title: string
-  excerpt: string
+  summary: string
 }
 
 const Blog = ({ posts }: BlogIndexProps) => {
@@ -33,10 +33,9 @@ const Blog = ({ posts }: BlogIndexProps) => {
                 <h3 className='text-3xl'>{post.title}</h3>
               </a>
             </NextLink>
-            <p className='text-slate-600'>{post.excerpt}</p>
+            <p className='text-slate-600'>{post.summary}</p>
           </article>
         ))}
-
       </main>
     </Layout>
   )
