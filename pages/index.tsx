@@ -169,8 +169,4 @@ const Home: NextPage = () => {
   )
 }
 
-export const config = {
-  runtime: 'experimental-edge',
-}
-
 export default Home
