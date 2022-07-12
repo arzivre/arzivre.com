@@ -1,11 +1,11 @@
-import ContactForm from 'components/ContactForm'
 import Layout from 'components/Layout'
+import ContactForm from 'components/ContactForm'
 
 const LeftSection = () => {
   return (
-    <section className='text-slate-900'>
+    <section className='p-10 text-slate-900'>
       <h1 className='font-serif font-bold text-[calc(1em+5vh)] mb-8'>
-        Let&apos;s Build Something Together
+        Memiliki Ide ? Tinggalkan pesan mari bangun bersama
       </h1>
       <p className='font-semibold text-xl'>Sonyfauzi@outlook.co.id</p>
       <p className='font-semibold text-xl'>0813 3205 6357</p>

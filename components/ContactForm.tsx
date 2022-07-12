@@ -37,7 +37,7 @@ const ContactForm = () => {
       )
     setSubmit(true)
   }
-  
+
   return (
     <form
       ref={formRef as any}
@@ -84,9 +84,11 @@ const ContactForm = () => {
           </button>
         </>
       ) : (
-        <h1 className='my-auto text-[calc(1em+5vh)] text-center '>
-          Pesan Terkirim
-        </h1>
+        <div className='flex items-center justify-center'>
+          <h1 className='my-20 font-serif text-[calc(1em+5vh)] text-yellow-50 text-center'>
+            Pesan Terkirim
+          </h1>
+        </div>
       )}
     </form>
   )
