@@ -3,9 +3,9 @@ import ContactForm from 'components/ContactForm'
 
 const LeftSection = () => {
   return (
-    <section className='p-10 text-slate-900'>
-      <h1 className='font-serif font-bold text-[calc(1em+5vh)] mb-8'>
-        Memiliki Ide ? Tinggalkan pesan mari bangun bersama
+    <section className='py-10 text-slate-900 md:px-10'>
+      <h1 className='font-serif font-bold text-[calc(1em+4vh)] mb-8'>
+        Memiliki Ide ? Kirim pesan mari bangun bersama
       </h1>
       <p className='font-semibold text-xl'>Sonyfauzi@outlook.co.id</p>
       <p className='font-semibold text-xl'>0813 3205 6357</p>
