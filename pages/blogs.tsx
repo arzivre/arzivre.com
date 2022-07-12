@@ -1,4 +1,3 @@
-import { Key } from 'react'
 import NextLink from 'next/link'
 import { getPosts } from 'libs/posts'
 import Layout from 'components/Layout'
@@ -9,17 +8,15 @@ export async function getStaticProps() {
     props: { posts },
   }
 }
-interface BlogIndexProps {
-  posts: [PostProps]
-}
+
 interface PostProps {
-  date: Key | number
+  date: string
   slug: string
   title: string
   summary: string
 }
 
-const Blog = ({ posts }: BlogIndexProps) => {
+const Blog = ({ posts }: { posts: [PostProps] }) => {
   return (
     <Layout>
       <main className='my-[calc(1rem+5vh)] mx-4 grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>

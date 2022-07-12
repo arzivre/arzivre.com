@@ -24,7 +24,15 @@ export const getStaticProps: GetStaticProps = async ({
   return { props: { post: { body, date, title, summary, image, slug } } }
 }
 
-const Post = ({ post }: any) => {
+interface PostProps {
+  date: string
+  slug: string
+  title: string
+  summary: string
+  body: any
+}
+
+const Post = ({ post }: { post: PostProps }) => {
   return (
     <Layout>
       <Head>
