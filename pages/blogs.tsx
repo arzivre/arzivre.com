@@ -9,7 +9,6 @@ export async function getStaticProps() {
     props: { posts },
   }
 }
-
 interface BlogIndexProps {
   posts: [PostProps]
 }
@@ -23,14 +22,19 @@ interface PostProps {
 const Blog = ({ posts }: BlogIndexProps) => {
   return (
     <Layout>
-      <main className='container mx-auto px-4 max-w-3xl my-10'>
-        <h1 className='font-serif text-[calc(1em+10vh)] mb-8'>Blog</h1>
+      <main className='my-[calc(1rem+5vh)] mx-4 grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>
+        <h1 className='col-[2_/_4] ml-2 mb-4 md:mb-0 font-serif text-[calc(1em+10vw)]'>
+          Blog
+        </h1>
 
         {posts.map((post: PostProps) => (
-          <article key={post.date} className='mb-4'>
+          <article
+            key={post.date}
+            className='col-[3_/_4] mb-[1em] max-w-[50ch] leading-normal'
+          >
             <NextLink href={`/blogs/${post.slug}`}>
               <a className=''>
-                <h3 className='text-3xl'>{post.title}</h3>
+                <h3 className='text-3xl hover:underline'>{post.title}</h3>
               </a>
             </NextLink>
             <p className='text-slate-600'>{post.summary}</p>

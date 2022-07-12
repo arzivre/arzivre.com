@@ -30,11 +30,22 @@ const Post = ({ post }: any) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <main className='container mx-auto max-w-4xl my-10 px-4 prose'>
-        <p className='text-slate-600'>{post.date.slice(0, 10)}</p>
-        <h1 className='font-serif text-[calc(1em+10vh)]'>{post.title}</h1>
+      <main className='mx-4 my-[calc(1rem+5vh)] grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>
+        <header className='col-[2_/_4] ml-2'>
+          <h1 className='mb-4 font-serif text-[calc(1em+6vw)] leading-none'>
+            {post.title}
+          </h1>
+          <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
+        </header>
+        <article className='prose col-[3_/_4] mb-[1em] max-w-[55ch] md:prose-lg lg:prose-xl'>
           <MDXRemote {...post.body} components={MDXComponents} />
+        </article>
       </main>
+      <footer className='my-4'>
+        <p className='text-slate-600 text-center'>
+          Copyright © Muhammad Sony Fauzi
+        </p>
+      </footer>
     </Layout>
   )
 }
