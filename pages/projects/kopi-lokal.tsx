@@ -1,5 +1,9 @@
+import Layout from 'components/Layout'
+
 const KopiLokal = () => {
-  return <div>Enter</div>
+  return <Layout>
+    <h1>Kopi Lokal</h1>
+  </Layout>
 }
 
 export default KopiLokal

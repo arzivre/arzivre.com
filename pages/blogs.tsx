@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { getPosts } from 'libs/posts'
+import { getPosts } from 'lib/posts'
 import Layout from 'components/Layout'
 
 export async function getStaticProps() {

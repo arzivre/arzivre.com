@@ -9,12 +9,12 @@ const Hero = () => {
       <article className='container mx-auto px-4 min-h-[90vh] mt-10 lg:flex gap-8'>
         <div>
           <Image
-            src='/images/profile.jpg'
+            src='/images/profile.webp'
             alt='Potrait'
-            width={2733}
-            height={2734}
+            width={800}
+            height={800}
             placeholder='blur'
-            blurDataURL='/images/profile.jpg'
+            blurDataURL='/images/profile.webp'
           />
         </div>
         <section className='mb-4'>
