@@ -10,8 +10,5 @@ module.exports = withPlugins([
   {
     reactStrictMode: true,
     swcMinify: true,
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
   },
 ])
