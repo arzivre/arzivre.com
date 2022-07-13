@@ -5,6 +5,9 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Layout from 'components/Layout'
 import MDXComponents from 'components/MDXComponents'
+import ViewCounter from 'components/ViewCounter'
+import { Suspense } from 'react'
+import { Loading } from 'components/Loading'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await getSlugs()
@@ -34,27 +37,36 @@ interface PostProps {
 
 const Post = ({ post }: { post: PostProps }) => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>{post.title}</title>
       </Head>
-      <main className='mx-4 my-[calc(1rem+5vh)] grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>
-        <header className='col-[2_/_4] ml-2'>
-          <h1 className='mb-4 font-serif text-[calc(1em+6vw)] leading-none'>
-            {post.title}
-          </h1>
-          <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
-        </header>
-        <article className='prose col-[3_/_4] mb-[1em] max-w-[55ch] md:prose-lg lg:prose-xl'>
-          <MDXRemote {...post.body} components={MDXComponents} />
-        </article>
-      </main>
-      <footer className='my-4'>
-        <p className='text-slate-600 text-center'>
-          Copyright © Muhammad Sony Fauzi
-        </p>
-      </footer>
-    </Layout>
+      <Layout>
+        <div className='container mx-auto'>
+          <main className='my-[calc(1rem+5vh)] mx-4 grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>
+            <header className='col-[2_/_4] ml-2'>
+              <h1 className='mb-4 font-serif text-[calc(1em+6vw)] leading-none'>
+                {post.title}
+              </h1>
+              <section className='flex justify-between'>
+                <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
+                <Suspense fallback={<Loading />}>
+                  <ViewCounter slug={post.slug} />
+                </Suspense>
+              </section>
+            </header>
+            <article className='overflow-x-auto prose col-[3_/_4] mb-[1em] max-w-[55ch] md:prose-lg lg:prose-xl'>
+              <MDXRemote {...post.body} components={MDXComponents} />
+            </article>
+          </main>
+        </div>
+        <footer className='my-4'>
+          <p className='text-slate-600 text-center'>
+            Copyright © Muhammad Sony Fauzi
+          </p>
+        </footer>
+      </Layout>
+    </>
   )
 }
 
