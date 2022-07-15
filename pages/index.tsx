@@ -7,16 +7,15 @@ const Hero = () => {
   return (
     <>
       <article className='container mx-auto px-4 min-h-[90vh] mt-10 lg:flex gap-8'>
-        <div>
-          <Image
-            src='/images/profile.webp'
-            alt='Potrait'
+        <picture>
+          <source srcSet='images/profile.avif' type='image/avif' />
+          <img
+            src='images/profile.webp'
+            alt='Potrait Muhammad Sony Fauzi'
             width={800}
             height={800}
-            placeholder='blur'
-            blurDataURL='/images/profile.webp'
           />
-        </div>
+        </picture>
         <section className='mb-4'>
           <h1 className='text-[calc(1em+6vh)] font-bold mb-4'>
             Muhammad Sony Fauzi
@@ -64,16 +63,15 @@ const ProjectKopiLokal = () => {
         </p>
       </div>
       <div className='md:flex gap-4'>
-        <div className='mb-4 text-[0px] border-4 border-gray-900'>
-          <Image
-            src='/images/kopi-lokal.png'
+        <picture className='mb-4 text-[0px] border-4 border-gray-900'>
+          <source srcSet='images/project/kopi-lokal.avif' type='image/avif' />
+          <img
+            src='images/project/kopi-lokal.webp'
             alt='Project Kopi Lokal'
             width={1235}
             height={585}
-            placeholder='blur'
-            blurDataURL='/images/kopi-lokal.png'
           />
-        </div>
+        </picture>
         <div className='w-80'>
           <div className='mb-5 flex justify-between gap-4 md:block'>
             <div>
@@ -112,16 +110,15 @@ const ProjectHouseOfJesho = () => {
         </p>
       </div>
       <div className='md:flex gap-4'>
-        <div className='mb-4 text-[0px] border-4 border-gray-900'>
-          <Image
-            src='/images/house-of-jesho.png'
+        <picture className='mb-4 text-[0px] border-4 border-gray-900'>
+          <source srcSet='images/project/house-of-jesho.avif' type='image/avif' />
+          <img
+            src='images/project/house-of-jesho.webp'
             alt='Project Kopi Lokal'
             width={1235}
             height={585}
-            placeholder='blur'
-            blurDataURL='/images/house-of-jesho.png'
           />
-        </div>
+        </picture>
         <div className='w-80'>
           <div className='mb-5 flex justify-between gap-4 md:block'>
             <div>
@@ -163,8 +160,8 @@ const Home: NextPage = () => {
       <h2 className='relative md:left-20 px-4 mb-4 text-[calc(1em+8vh)]'>
         Projects
       </h2>
-      <ProjectKopiLokal />
       <ProjectHouseOfJesho />
+      <ProjectKopiLokal />
     </Layout>
   )
 }
