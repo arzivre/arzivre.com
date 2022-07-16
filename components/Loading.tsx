@@ -3,7 +3,7 @@ export const Loading = () => {
     <>
       <svg
         role='status'
-        className='inline w-4 h-4 mr-2 text-gray-200 animate-spin'
+        className='mr-2 inline h-4 w-4 animate-spin text-gray-200'
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

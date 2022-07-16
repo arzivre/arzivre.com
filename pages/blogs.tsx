@@ -20,7 +20,7 @@ const Blog = ({ posts }: { posts: [PostProps] }) => {
   return (
     <Layout>
       <main className='my-[calc(1rem+5vh)] mx-4 grid min-h-[50vh] grid-cols-[2fr_3fr_auto_1fr]'>
-        <h1 className='col-[2_/_4] ml-2 mb-4 md:mb-0 font-serif text-[calc(1em+10vw)]'>
+        <h1 className='col-[2_/_4] ml-2 mb-4 font-serif text-[calc(1em+10vw)] md:mb-0'>
           Blog
         </h1>
 

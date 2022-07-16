@@ -5,7 +5,7 @@ import Head from 'next/head'
 const Hero = () => {
   return (
     <>
-      <article className='container mx-auto px-4 min-h-[90vh] mt-10 lg:flex gap-8'>
+      <article className='container mx-auto mt-10 min-h-[90vh] gap-8 px-4 lg:flex'>
         <picture>
           <source srcSet='images/profile.avif' type='image/avif' />
           <img
@@ -16,14 +16,14 @@ const Hero = () => {
           />
         </picture>
         <section className='mb-4'>
-          <h1 className='text-[calc(1em+6vh)] font-bold mb-4'>
+          <h1 className='mb-4 text-[calc(1em+6vh)] font-bold'>
             Muhammad Sony Fauzi
           </h1>
           <h2 className='text-[calc(1em+5vh)] font-thin'>Web Developer,</h2>
           <h2 className='text-[calc(1em+5vh)] font-thin'>Penulis</h2>
         </section>
         <section className='whitespace-nowrap text-right lg:text-left'>
-          <h3 className='text-2xl mb-1'>Sosial Media</h3>
+          <h3 className='mb-1 text-2xl'>Sosial Media</h3>
           <p>
             <a
               href='https://twitter.com/arzivre'
@@ -52,7 +52,7 @@ const ProjectKopiLokal = () => {
   return (
     <section className='container mx-auto px-4 md:my-10'>
       <div className='grid md:grid-cols-2 md:gap-1 lg:grid-cols-3 lg:gap-40'>
-        <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Kopi Lokal</h2>
+        <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Kopi Lokal</h2>
         <p className='mb-4 md:mb-10'>
           Kopi Lokal adalah project sampingan saya untuk menulis lokasi warung
           kopi dan artikel tentang Kopi
@@ -61,8 +61,8 @@ const ProjectKopiLokal = () => {
           Web ini menggukan teknologi Supabase untuk menyimpan data dan file
         </p>
       </div>
-      <div className='md:flex gap-4'>
-        <picture className='mb-4 text-[0px] border-4 border-gray-900'>
+      <div className='gap-4 md:flex'>
+        <picture className='mb-4 border-4 border-gray-900 text-[0px]'>
           <source srcSet='images/project/kopi-lokal.avif' type='image/avif' />
           <img
             src='images/project/kopi-lokal.webp'
@@ -74,7 +74,7 @@ const ProjectKopiLokal = () => {
         <div className='w-80'>
           <div className='mb-5 flex justify-between gap-4 md:block'>
             <div>
-              <h2 className='text-2xl mb-1'>URL</h2>
+              <h2 className='mb-1 text-2xl'>URL</h2>
               <a
                 target='_blank'
                 rel='noopener noreferrer'
@@ -85,7 +85,7 @@ const ProjectKopiLokal = () => {
               </a>
             </div>
             <div>
-              <h2 className='text-2xl mb-1 mt-4'>Teknologi</h2>
+              <h2 className='mb-1 mt-4 text-2xl'>Teknologi</h2>
               <p>ReactJS</p>
               <p>NextJS</p>
               <p>Supabase</p>
@@ -102,15 +102,18 @@ const ProjectHouseOfJesho = () => {
   return (
     <section className='container mx-auto px-4 md:my-10'>
       <div className='grid md:grid-cols-2 lg:grid-cols-3'>
-        <h2 className='text-4xl mb-4 md:mb-10 lg:mb-20'>Houseofjesho</h2>
+        <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Houseofjesho</h2>
         <p className='mb-4 md:mb-10'>
           Houseofjesho adalah perusahaan mebel yang berbasis di Semarang,
           Indonesia.
         </p>
       </div>
-      <div className='md:flex gap-4'>
-        <picture className='mb-4 text-[0px] border-4 border-gray-900'>
-          <source srcSet='images/project/house-of-jesho.avif' type='image/avif' />
+      <div className='gap-4 md:flex'>
+        <picture className='mb-4 border-4 border-gray-900 text-[0px]'>
+          <source
+            srcSet='images/project/house-of-jesho.avif'
+            type='image/avif'
+          />
           <img
             src='images/project/house-of-jesho.webp'
             alt='Project Kopi Lokal'
@@ -121,7 +124,7 @@ const ProjectHouseOfJesho = () => {
         <div className='w-80'>
           <div className='mb-5 flex justify-between gap-4 md:block'>
             <div>
-              <h2 className='text-2xl mb-1'>URL</h2>
+              <h2 className='mb-1 text-2xl'>URL</h2>
               <a
                 href='https://houseofjesho.com'
                 target='_blank'
@@ -132,7 +135,7 @@ const ProjectHouseOfJesho = () => {
               </a>
             </div>
             <div>
-              <h2 className='text-2xl mb-1 md:mt-4'>Teknologi</h2>
+              <h2 className='mb-1 text-2xl md:mt-4'>Teknologi</h2>
               <p>ReactJS</p>
               <p>NextJS</p>
               <p>Firebase</p>
@@ -152,11 +155,11 @@ const Home: NextPage = () => {
           name='description'
           content='Muhammad Sony Fauzi Freelance Web developer, Penulis, Gamer'
         />
-        <meta name='keywords' content='web, developer, freelance' />
+
         <title>Arzivre</title>
       </Head>
       <Hero />
-      <h2 className='relative md:left-20 px-4 mb-4 text-[calc(1em+8vh)]'>
+      <h2 className='relative mb-4 px-4 text-[calc(1em+8vh)] md:left-20'>
         Projects
       </h2>
       <ProjectHouseOfJesho />

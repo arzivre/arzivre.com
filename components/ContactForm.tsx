@@ -42,8 +42,8 @@ const ContactForm = () => {
     <form
       ref={formRef as any}
       onSubmit={sendEmail}
-      className='p-10 bg-purple-600/70 rounded-md
-          border-2 border-yellow-400'
+      className='rounded-md border-2 border-yellow-400
+          bg-purple-600/70 p-10'
     >
       {!submit ? (
         <>
@@ -53,7 +53,7 @@ const ContactForm = () => {
             required
             value={data.user_email}
             onChange={(e) => setData({ ...data, user_email: e.target.value })}
-            className='w-full mb-4 form-input px-4 py-3 rounded-md'
+            className='form-input mb-4 w-full rounded-md px-4 py-3'
           />
 
           <input
@@ -61,7 +61,7 @@ const ContactForm = () => {
             name='user_name'
             value={data.user_name}
             onChange={(e) => setData({ ...data, user_name: e.target.value })}
-            className='w-full mb-4 form-input px-4 py-3 rounded-md'
+            className='form-input mb-4 w-full rounded-md px-4 py-3'
           />
           <textarea
             required
@@ -70,12 +70,12 @@ const ContactForm = () => {
             rows={4}
             value={data.message}
             onChange={(e) => setData({ ...data, message: e.target.value })}
-            className='w-full mb-4 form-textarea px-4 py-3 rounded-md'
+            className='form-textarea mb-4 w-full rounded-md px-4 py-3'
           />
 
           <button
-            className='px-4 py-2 my-4 bg-blue-600 text-blue-50 rounded-md 
-                hover:text-blue-900 hover:bg-blue-300'
+            className='my-4 rounded-md bg-blue-600 px-4 py-2 text-blue-50 
+                hover:bg-blue-300 hover:text-blue-900'
             type='submit'
             value='Send'
             disabled={submit}
@@ -85,7 +85,7 @@ const ContactForm = () => {
         </>
       ) : (
         <div className='flex items-center justify-center'>
-          <h1 className='my-20 font-serif text-[calc(1em+5vh)] text-yellow-50 text-center'>
+          <h1 className='my-20 text-center font-serif text-[calc(1em+5vh)] text-yellow-50'>
             Pesan Terkirim
           </h1>
         </div>

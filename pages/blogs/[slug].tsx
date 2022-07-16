@@ -48,7 +48,7 @@ const Post = ({ post }: { post: PostProps }) => {
               <h1 className='mb-4 font-serif text-[calc(1em+6vw)] leading-none'>
                 {post.title}
               </h1>
-                <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
+              <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
               {/* <section className='flex justify-between'>
                 <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
                 <Suspense fallback={<Loading />}>
@@ -56,13 +56,13 @@ const Post = ({ post }: { post: PostProps }) => {
                 </Suspense>
               </section> */}
             </header>
-            <article className='overflow-x-auto prose col-[3_/_4] mb-[1em] max-w-[55ch] md:prose-lg lg:prose-xl'>
+            <article className='prose col-[3_/_4] mb-[1em] max-w-[55ch] overflow-x-auto md:prose-lg lg:prose-xl'>
               <MDXRemote {...post.body} components={MDXComponents} />
             </article>
           </main>
         </div>
         <footer className='my-4'>
-          <p className='text-slate-600 text-center'>
+          <p className='text-center text-slate-600'>
             Copyright © Muhammad Sony Fauzi
           </p>
         </footer>

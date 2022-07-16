@@ -68,9 +68,9 @@ const Header = () => {
   return (
     <header
       className='sticky top-0 z-10 
-      backdrop-blur-sm backdrop-filter 
-      bg-gray-50 bg-opacity-10 bg-clip-padding  
       border border-gray-100 
+      bg-gray-50 bg-opacity-10 bg-clip-padding  
+      backdrop-blur-sm backdrop-filter 
       hover:shadow-md'
     >
       <nav className='container mx-auto px-4'>
