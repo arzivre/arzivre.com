@@ -1,47 +1,59 @@
 import type { NextPage } from 'next'
 import Layout from 'components/Layout'
 import Head from 'next/head'
-
+const SocialMedia = () => {
+  return (
+    <div
+      className='col-[3_/_4] py-8 mx-4 whitespace-nowrap text-gray-900 md:mx-0
+    '
+    >
+      <h3 className='mb-4 text-3xl text-slate-900'>Sosial Media</h3>
+      <p className='mb-2 text-xl'>
+        <a
+          href='https://twitter.com/arzivre'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Twitter
+        </a>
+      </p>
+      <p className='text-xl'>
+        <a
+          href='https://github.com/arzivre'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Github
+        </a>
+      </p>
+    </div>
+  )
+}
 const Hero = () => {
   return (
     <>
-      <article className='container mx-auto mt-10 min-h-[90vh] gap-8 px-4 lg:flex'>
+      <article
+        className='x-4 container
+        mx-auto mt-10 min-h-[90vh] gap-8 lg:flex'
+      >
         <picture>
           <source srcSet='images/profile.avif' type='image/avif' />
           <img
+            className='rounded'
             src='images/profile.webp'
             alt='Potrait Muhammad Sony Fauzi'
             width={800}
             height={800}
           />
         </picture>
-        <section className='mb-4'>
-          <h1 className='mb-4 text-[calc(1em+6vh)] font-bold'>
+        <section className='grid grid-cols-[2fr_3fr_auto_1fr]'>
+          <h1 className='col-[1_/_4] p-4 text-[calc(1em+6vh)] font-bold text-slate-900'>
             Muhammad Sony Fauzi
           </h1>
-          <h2 className='text-[calc(1em+5vh)] font-thin'>Web Developer,</h2>
-          <h2 className='text-[calc(1em+5vh)] font-thin'>Penulis</h2>
-        </section>
-        <section className='whitespace-nowrap text-right lg:text-left'>
-          <h3 className='mb-1 text-2xl'>Sosial Media</h3>
-          <p className='text-xl'>
-            <a
-              href='https://twitter.com/arzivre'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Twitter
-            </a>
-          </p>
-          <p className='text-xl'>
-            <a
-              href='https://github.com/arzivre'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Github
-            </a>
-          </p>
+          <h2 className='col-[3_/_4] px-4 text-right text-[calc(1em+5vh)] font-bold text-rose-600'>
+            Web Developer, Penulis
+          </h2>
+          <SocialMedia />
         </section>
       </article>
     </>

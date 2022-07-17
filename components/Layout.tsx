@@ -3,7 +3,7 @@ import Head from 'next/head'
 type LayoutProps = {
   children: React.ReactNode
 }
-const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
