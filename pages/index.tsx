@@ -24,7 +24,7 @@ const Hero = () => {
         </section>
         <section className='whitespace-nowrap text-right lg:text-left'>
           <h3 className='mb-1 text-2xl'>Sosial Media</h3>
-          <p>
+          <p className='text-xl'>
             <a
               href='https://twitter.com/arzivre'
               target='_blank'
@@ -33,7 +33,7 @@ const Hero = () => {
               Twitter
             </a>
           </p>
-          <p>
+          <p className='text-xl'>
             <a
               href='https://github.com/arzivre'
               target='_blank'
@@ -53,16 +53,16 @@ const ProjectKopiLokal = () => {
     <section className='container mx-auto px-4 md:my-10'>
       <div className='grid md:grid-cols-2 md:gap-1 lg:grid-cols-3 lg:gap-40'>
         <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Kopi Lokal</h2>
-        <p className='mb-4 md:mb-10'>
+        <p className='mb-4 text-lg md:mb-10'>
           Kopi Lokal adalah project sampingan saya untuk menulis lokasi warung
           kopi dan artikel tentang Kopi
         </p>
-        <p className='mb-4 md:mb-10'>
+        <p className='mb-4 text-lg md:mb-10'>
           Web ini menggukan teknologi Supabase untuk menyimpan data dan file
         </p>
       </div>
       <div className='gap-4 md:flex'>
-        <picture className='mb-4 border-4 border-gray-900 text-[0px]'>
+        <picture className='mb-4 border-gray-900 text-[0px] md:border-4'>
           <source srcSet='images/project/kopi-lokal.avif' type='image/avif' />
           <img
             src='images/project/kopi-lokal.webp'
@@ -72,24 +72,24 @@ const ProjectKopiLokal = () => {
           />
         </picture>
         <div className='w-80'>
-          <div className='mb-5 flex justify-between gap-4 md:block'>
+          <div className='mb-5 flex flex-col gap-4 space-y-8 md:block'>
             <div>
               <h2 className='mb-1 text-2xl'>URL</h2>
               <a
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://kopilokal.com'
-                className='hover:text-blue-600'
+                className='text-lg hover:text-blue-600'
               >
                 kopilokal.com
               </a>
             </div>
             <div>
               <h2 className='mb-1 mt-4 text-2xl'>Teknologi</h2>
-              <p>ReactJS</p>
-              <p>NextJS</p>
-              <p>Supabase</p>
-              <p>MDX</p>
+              <p className='text-md'>ReactJS</p>
+              <p className='text-md'>NextJS</p>
+              <p className='text-md'>Supabase</p>
+              <p className='text-md'>MDX</p>
             </div>
           </div>
         </div>
@@ -103,13 +103,13 @@ const ProjectHouseOfJesho = () => {
     <section className='container mx-auto px-4 md:my-10'>
       <div className='grid md:grid-cols-2 lg:grid-cols-3'>
         <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Houseofjesho</h2>
-        <p className='mb-4 md:mb-10'>
+        <p className='mb-4 text-lg md:mb-10'>
           Houseofjesho adalah perusahaan mebel yang berbasis di Semarang,
           Indonesia.
         </p>
       </div>
       <div className='gap-4 md:flex'>
-        <picture className='mb-4 border-4 border-gray-900 text-[0px]'>
+        <picture className='mb-4 border-gray-900 text-[0px] md:border-4'>
           <source
             srcSet='images/project/house-of-jesho.avif'
             type='image/avif'
@@ -122,23 +122,23 @@ const ProjectHouseOfJesho = () => {
           />
         </picture>
         <div className='w-80'>
-          <div className='mb-5 flex justify-between gap-4 md:block'>
+          <div className='mb-5 flex flex-col space-y-8 md:block md:justify-between'>
             <div>
               <h2 className='mb-1 text-2xl'>URL</h2>
               <a
                 href='https://houseofjesho.com'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='hover:text-blue-600'
+                className='text-lg hover:text-blue-600'
               >
                 houseofjesho.com
               </a>
             </div>
             <div>
               <h2 className='mb-1 text-2xl md:mt-4'>Teknologi</h2>
-              <p>ReactJS</p>
-              <p>NextJS</p>
-              <p>Firebase</p>
+              <p className='text-md'>ReactJS</p>
+              <p className='text-md'>NextJS</p>
+              <p className='text-md'>Firebase</p>
             </div>
           </div>
         </div>
