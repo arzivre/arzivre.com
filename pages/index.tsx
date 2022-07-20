@@ -1,60 +1,27 @@
 import type { NextPage } from 'next'
 import Layout from 'components/Layout'
 import Head from 'next/head'
-const SocialMedia = () => {
-  return (
-    <div
-      className='col-[3_/_4] py-8 mx-4 whitespace-nowrap text-gray-900 md:mx-0
-    '
-    >
-      <h3 className='mb-4 text-3xl text-slate-900'>Sosial Media</h3>
-      <p className='mb-2 text-xl'>
-        <a
-          href='https://twitter.com/arzivre'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Twitter
-        </a>
-      </p>
-      <p className='text-xl'>
-        <a
-          href='https://github.com/arzivre'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Github
-        </a>
-      </p>
-    </div>
-  )
-}
+
 const Hero = () => {
   return (
     <>
-      <article
-        className='x-4 container
-        mx-auto mt-10 min-h-[90vh] gap-8 lg:flex'
-      >
-        <picture>
+      <article className='mx-auto mt-10 grid min-h-[90vh] max-w-7xl grid-cols-[2fr_3fr_auto_1fr]'>
+        <h1 className='col-[2/4] p-4 text-[calc(1em+7vw)] font-bold text-slate-900'>
+          Muhammad Sony Fauzi
+        </h1>
+        <h2 className='col-[3/4] mb-8 px-4 text-right text-[calc(1em+5vw)] font-bold text-rose-600'>
+          Web Developer, Penulis
+        </h2>
+        <picture className='col-[3/4]'>
           <source srcSet='images/profile.avif' type='image/avif' />
           <img
-            className='rounded'
+            className='rounded-full px-4'
             src='images/profile.webp'
             alt='Potrait Muhammad Sony Fauzi'
             width={800}
             height={800}
           />
         </picture>
-        <section className='grid grid-cols-[2fr_3fr_auto_1fr]'>
-          <h1 className='col-[1_/_4] p-4 text-[calc(1em+6vh)] font-bold text-slate-900'>
-            Muhammad Sony Fauzi
-          </h1>
-          <h2 className='col-[3_/_4] px-4 text-right text-[calc(1em+5vh)] font-bold text-rose-600'>
-            Web Developer, Penulis
-          </h2>
-          <SocialMedia />
-        </section>
       </article>
     </>
   )
