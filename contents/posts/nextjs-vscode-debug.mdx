@@ -21,7 +21,7 @@ Untuk Sistem Operasi Windows perlu install cross-env
  "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
 ```
 
-## Configure VS Code so that it connects to your already started Next.js application. 
+## Configure VS Code so that it connects to your already started Next.js application.
 
 Buat file .vscode/launch.json at the root project anda:
 
@@ -33,9 +33,7 @@ Buat file .vscode/launch.json at the root project anda:
       "name": "Next.js: attach",
       "port": 9229,
       "request": "attach",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "type": "node",
       "restart": true
     },
@@ -47,7 +45,7 @@ Buat file .vscode/launch.json at the root project anda:
     },
     {
       "name": "Next.js: debug client-side",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3000"
     },
@@ -65,3 +63,13 @@ Buat file .vscode/launch.json at the root project anda:
   ]
 }
 ```
+
+## Tahap akhir
+
+mulai run scripts
+
+```
+npm run dev:debug
+```
+
+kemudian start debug di vscode (tekan F5)
