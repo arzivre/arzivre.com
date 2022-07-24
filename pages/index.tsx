@@ -116,7 +116,7 @@ const ProjectKopiLokal = () => {
         border-4 border-black bg-[#0f0e17] p-8 text-gray-600'
         >
           <p>
-            <span className=' mb-2 text-rose-600 hover:underline'>
+            <span className='mb-2 text-orange-500 hover:underline'>
               <a
                 target='_blank'
                 rel='noopener noreferrer'
