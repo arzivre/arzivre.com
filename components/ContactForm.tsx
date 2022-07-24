@@ -42,7 +42,7 @@ const ContactForm = () => {
     <form
       ref={formRef as any}
       onSubmit={sendEmail}
-      className='col-[1/5] max-w-2xl px-10'
+      className='col-[1/5] max-w-2xl md:px-10'
     >
       {!submit ? (
         <>

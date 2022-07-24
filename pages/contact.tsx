@@ -3,8 +3,8 @@ import ContactForm from 'components/ContactForm'
 
 const ContactList = () => {
   return (
-    <div className='col-[1/5] mb-4 font-serif text-2xl text-gray-100 md:px-10 lg:col-[3/5] lg:mb-0'>
-      <section className='grid grid-cols-[auto_auto] gap-x-8 gap-y-2'>
+    <div className='col-[1/5] mb-4 font-serif text-xl text-gray-100 md:px-10 lg:col-[3/5] lg:mb-0'>
+      <section className='grid md:grid-cols-[auto_auto] gap-x-8 gap-y-2'>
         <p>E-mail</p>
         <p className='text-slate-900'>sonyfauzi@outlook.co.id</p>
         <p>Phone</p>
@@ -19,7 +19,7 @@ const ContactList = () => {
 const ContactPage = () => {
   return (
     <Layout>
-      <div className='px-4'>
+      <div className='md:px-4'>
         <main
           className='container mx-auto my-10 grid grid-cols-[2fr,auto,1fr] rounded-md 
           bg-gradient-to-r from-cyan-400 to-blue-600 p-4 md:p-8'

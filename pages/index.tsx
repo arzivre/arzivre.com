@@ -35,16 +35,16 @@ const Hero = () => {
 const ProjectHouseOfJesho = () => {
   return (
     <section
-      className='container mx-auto mb-10 bg-[#0f0e17] px-4 py-8 text-gray-50 
+      className='container mx-auto mb-10 bg-[#0f0e17] px-4 py-8 text-2xl  text-gray-50
       md:my-10 md:px-8'
     >
       <div className='grid gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
         <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Houseofjesho</h2>
-        <p className='mb-4 text-2xl text-[#a7a9be] md:mb-10'>
+        <p className='mb-4 text-[#a7a9be] md:mb-10'>
           Houseofjesho adalah perusahaan mebel yang berbasis di Semarang,
           Indonesia.
         </p>
-        <p className='mb-4 text-2xl text-[#a7a9be] md:mb-10'>
+        <p className='mb-4 text-[#a7a9be] md:mb-10'>
           <span className='text-orange-500'>Xendit </span>
           sebagai payment gateway yang menerima berbagai metode pembayaran.
         </p>
@@ -64,9 +64,9 @@ const ProjectHouseOfJesho = () => {
           />
         </picture>
         <div className='md:w-80'>
-          <div className='flex flex-row-reverse justify-between md:flex-col'>
-            <div>
-              <h2 className='mb-4 text-4xl'>URL</h2>
+          <div className='flex flex-col justify-between'>
+            <div className='mb-4 '>
+              <h2 className='mb-4 '>URL</h2>
               <a
                 href='https://houseofjesho.com'
                 target='_blank'
@@ -77,9 +77,7 @@ const ProjectHouseOfJesho = () => {
               </a>
             </div>
             <div className='text-xl text-[#a7a9be]'>
-              <h2 className='mb-4 text-4xl text-gray-50 md:mb-8 md:mt-4'>
-                Teknologi
-              </h2>
+              <h2 className='mb-4 text-gray-50 md:mt-4'>Teknologi</h2>
               <p>ReactJS</p>
               <p>NextJS</p>
               <p>Typescript</p>
@@ -95,9 +93,9 @@ const ProjectHouseOfJesho = () => {
 
 const ProjectKopiLokal = () => {
   return (
-    <section className='container mx-auto mb-10 px-4 text-2xl md:my-10'>
+    <section className='container mx-auto mb-10 px-4 text-2xl text-slate-700 md:my-10'>
       <div className='grid gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
-        <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20'>Kopi Lokal</h2>
+        <h2 className='mb-4 text-4xl md:mb-10 lg:mb-20 text-slate-900'>Kopi Lokal</h2>
         <p className='mb-4 md:mb-10'>
           Kopi Lokal adalah project sampingan saya untuk menulis lokasi warung
           kopi dan artikel tentang Kopi
@@ -118,20 +116,21 @@ const ProjectKopiLokal = () => {
           />
         </picture>
         <div className='md:w-80'>
-          <div className='flex flex-row-reverse justify-between md:flex-col'>
-            <div>
-              <h2 className='mb-4 text-4xl'>URL</h2>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://kopilokal.com'
-                className=' hover:text-blue-600'
-              >
-                kopilokal.com
-              </a>
+          <div className='flex flex-col justify-between'>
+            <div className='mb-4'>
+              <h2 className='mb-4'>URL</h2>
+              <p className='text-blue-600 hover:underline'>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://kopilokal.com'
+                >
+                  kopilokal.com
+                </a>
+              </p>
             </div>
-            <div className='text-xl'>
-              <h2 className='mb-4 text-4xl md:mb-8 md:mt-4'>Teknologi</h2>
+            <div>
+              <h2 className='mb-4 text-gray-900 md:mt-4'>Teknologi</h2>
               <p>ReactJS</p>
               <p>NextJS</p>
               <p>Typescript</p>
@@ -160,7 +159,7 @@ const Home: NextPage = () => {
         <Hero />
         <h2
           className='container mx-auto mb-4 
-          border-y-2 border-gray-100 px-4 text-[calc(1em+8vw)] text-gray-900'
+           px-4 text-[calc(1em+8vw)] text-black'
         >
           PROJECTS
         </h2>
