@@ -97,7 +97,7 @@ const ProjectHouseOfJesho = () => {
 const ProjectKopiLokal = () => {
   return (
     <section className='container mx-auto my-10 px-4 text-2xl text-slate-700 md:my-20'>
-      <h2 className='py-20 text-[calc(1em+13vw)] text-gray-900 md:mb-10 lg:mb-20'>
+      <h2 className='py-20 text-[calc(1em+10vw)] text-gray-900 md:mb-10 lg:mb-20'>
         Kopi Lokal
       </h2>
       <div className='mt-4 grid grid-cols-1 gap-x-4 md:grid-cols-2'>
