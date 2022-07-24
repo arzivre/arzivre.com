@@ -39,7 +39,11 @@ const ContactForm = () => {
   }
 
   return (
-    <form ref={formRef as any} onSubmit={sendEmail} className='col-[1/5] p-10 max-w-2xl'>
+    <form
+      ref={formRef as any}
+      onSubmit={sendEmail}
+      className='col-[1/5] max-w-2xl px-10'
+    >
       {!submit ? (
         <>
           <input
@@ -69,8 +73,8 @@ const ContactForm = () => {
           />
 
           <button
-            className='my-4 rounded-md bg-blue-700 px-4 py-2 text-blue-50 border
-                hover:bg-green-500 hover:text-green-900 hover:border hover:border-green-900'
+            className='my-4 rounded-md border bg-blue-700 px-4 py-2 text-blue-50
+                hover:border hover:border-green-900 hover:bg-green-500 hover:text-green-900'
             type='submit'
             value='Send'
             disabled={submit}

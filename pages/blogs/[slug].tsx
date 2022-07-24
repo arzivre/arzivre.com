@@ -5,9 +5,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Layout from 'components/Layout'
 import MDXComponents from 'components/MDXComponents'
-// import ViewCounter from 'components/ViewCounter'
-// import { Suspense } from 'react'
-// import { Loading } from 'components/Loading'
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await getSlugs()
@@ -49,23 +47,12 @@ const Post = ({ post }: { post: PostProps }) => {
                 {post.title}
               </h1>
               <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
-              {/* <section className='flex justify-between'>
-                <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
-                <Suspense fallback={<Loading />}>
-                  <ViewCounter slug={post.slug} />
-                </Suspense>
-              </section> */}
             </header>
             <article className='prose col-[3_/_4] mb-[1em] max-w-[55ch] overflow-x-auto md:prose-lg lg:prose-xl'>
               <MDXRemote {...post.body} components={MDXComponents} />
             </article>
           </main>
         </div>
-        <footer className='my-4'>
-          <p className='text-center text-slate-600'>
-            Copyright © Muhammad Sony Fauzi
-          </p>
-        </footer>
       </Layout>
     </>
   )

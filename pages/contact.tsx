@@ -3,12 +3,16 @@ import ContactForm from 'components/ContactForm'
 
 const ContactList = () => {
   return (
-    <section className='col-[1/5] lg:col-[3/5] text-gray-100 md:px-10'>
-      <p className='text-2xl'>Sonyfauzi@outlook.co.id</p>
-      <p className='text-2xl'>0813-3205-6357</p>
-      <p className='mb-8 text-2xl'>Kediri, Jawa Timur.</p>
-      <p className='text-2xl'>Akan menjawab dalam 24 jam.</p>
-    </section>
+    <div className='col-[1/5] mb-4 font-serif text-2xl text-gray-100 md:px-10 lg:col-[3/5] lg:mb-0'>
+      <section className='grid grid-cols-[auto_auto] gap-x-8 gap-y-2'>
+        <p>E-mail</p>
+        <p className='text-slate-900'>sonyfauzi@outlook.co.id</p>
+        <p>Phone</p>
+        <p className='text-slate-900'>0813-3205-6357</p>
+        <p>Alamat</p>
+        <p className='text-slate-900'>Kediri, Jawa Timur.</p>
+      </section>
+    </div>
   )
 }
 

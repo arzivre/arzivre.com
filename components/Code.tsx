@@ -1,4 +1,4 @@
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/dracula'
 // import { useClipboard } from '@mantine/hooks'
 
@@ -15,8 +15,8 @@ import theme from 'prism-react-renderer/themes/dracula'
 // }
 
 interface CodeProps {
-  children: any
-  className: any
+  children: string
+  className: string
 }
 
 export const Code = ({ children, className }: CodeProps) => {
@@ -26,7 +26,7 @@ export const Code = ({ children, className }: CodeProps) => {
       {...defaultProps}
       theme={theme}
       code={children}
-      language={language}
+      language={language as Language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
