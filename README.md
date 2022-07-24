@@ -1,7 +1,9 @@
 # Arzivre.com
 
 Framework: Next.js
+
 Styling: Tailwind CSS
+
 Deployment: Vercel
 
 ## Running Locally

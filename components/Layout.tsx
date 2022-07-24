@@ -8,7 +8,7 @@ const desktop = (
   >
     <Link href='/'>
       <a>
-        <h1 className='text-xl font-semibold text-gray-50 hover:underline'>
+        <h1 className='text-3xl font-semibold text-gray-50 hover:underline'>
           Arzivre
         </h1>
       </a>
@@ -19,7 +19,7 @@ const desktop = (
     >
       <Link href='/'>
         <a
-          className='whitespace-nowrap rounded-sm p-2 text-base font-medium text-gray-50 
+          className='whitespace-nowrap rounded-sm p-2 font-medium text-gray-50 
         hover:bg-cyan-400 hover:text-blue-900'
         >
           Home
@@ -27,7 +27,7 @@ const desktop = (
       </Link>
       <Link href='/blogs'>
         <a
-          className='ml-8 whitespace-nowrap rounded-sm p-2 text-base font-medium text-gray-50 
+          className='ml-8 whitespace-nowrap rounded-sm p-2 font-medium text-gray-50 
         hover:bg-cyan-400 hover:text-blue-900'
         >
           Blog
@@ -35,7 +35,7 @@ const desktop = (
       </Link>
       <Link href='/contact'>
         <a
-          className='ml-8 whitespace-nowrap rounded-sm p-2 text-base font-medium text-gray-50 
+          className='ml-8 whitespace-nowrap rounded-sm p-2 font-medium text-gray-50 
         hover:bg-cyan-400 hover:text-blue-900'
         >
           Contact
@@ -78,8 +78,7 @@ const Header = () => {
   return (
     <header
       className='sticky top-0 z-10 
-       border-b border-cyan-500 bg-slate-900 
-       shadow-md shadow-cyan-400'
+      bg-[#0f0e17] text-xl'
     >
       <nav className='container mx-auto px-4'>
         {desktop}
