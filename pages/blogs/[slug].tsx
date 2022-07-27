@@ -6,7 +6,6 @@ import { MDXRemote } from 'next-mdx-remote'
 import Layout from 'components/Layout'
 import MDXComponents from 'components/MDXComponents'
 
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = await getSlugs()
   return {
@@ -48,7 +47,7 @@ const Post = ({ post }: { post: PostProps }) => {
               </h1>
               <time className='text-slate-600'>{post.date.slice(0, 10)}</time>
             </header>
-            <article className='prose col-[3_/_4] mb-[1em] max-w-[55ch] overflow-x-auto md:prose-lg lg:prose-xl'>
+            <article className='prose col-[3_/_4] mb-[1em] max-w-[60ch] overflow-x-auto prose-code:max-w-4xl md:prose-lg lg:prose-xl'>
               <MDXRemote {...post.body} components={MDXComponents} />
             </article>
           </main>
