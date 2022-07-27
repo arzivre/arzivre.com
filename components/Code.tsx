@@ -81,3 +81,7 @@ export const Code = ({ children, className }: CodeProps) => {
   )
 }
 export default Code
+
+// * More Tutorial
+// * https://egghead.io/courses/mdx-conf-3fc2
+// * https://egghead.io/lessons/mdx-personal-site-playgrounds-with-mdx
